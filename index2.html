@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+		<title>中秋礼品 </title>
+		<style>
+			/*全局公共样式*/input,button,select,textarea{outline: none;}
+			*{padding: 0px;margin: 0px;}
+			form,select,input,img{border: 0;margin: 0px;padding: 0px;vertical-align: middle;width: 100%;}
+			li{list-style: none;}
+			a{text-decoration: none;}
+			body,html{height: auto;margin: 0 auto;min-width: 20rem;max-width: 35rem;}
+			
+			/*文中局部公共样式*/
+			.i_strong{font-weight: bold;}
+			.bag_zq span{color: #6C6B6B;}
+			
+			/*banner的背景*/
+			#content{width: auto;height: 100%;margin: 0 auto;padding: 1rem;}
+			#content .banner_bg{background: url(img/banner_top.jpg);height: 14rem;background-size: 100% 100%;width: 100%;margin-bottom: 1rem;}
+			
+			/*标题样式*/
+			.title_ti2{width: 100%;height: 6rem;background: pink;margin: 0rem auto;background: url(img/title_bg.png) no-repeat;background-size: 100% 100%;}
+            .title_ti2 span{color: #FFFFFF;font-size: 0.92rem;display: block;margin: 0 auto;height: 6rem;line-height: 6rem;text-align: center;}
+			
+			/*图片样式*/
+			.img_bg{width: 100%;height: 13rem;margin-bottom: 0.5rem;}
+			
+			/*商品文字信息介绍*/
+			.text_intro{background: rgb(241, 241, 241) url(img/quot.jpg) no-repeat 1% 0.31rem;color: #6C6B6B;margin: 10px 0px;padding: 0.93rem 1.25rem 0.93rem 2.81rem;font-size: 0.87rem;line-height: 1.39rem;outline: 0px;border: 0px currentcolor;vertical-align: baseline;}
+			
+			/*品鉴记录与规格*/
+			.record_zq{padding-right: 0.31rem;padding-left: 0.31rem;border: 1px solid rgb(252, 180, 43);line-height: 0.62rem;margin: 3rem 0 2rem 0;}
+			.record_zq_top_bg{margin-top: -0.5rem;margin-left: 8.75rem;width: 50%;height: 0.5rem;background-color: rgb(254, 254, 254);}
+			.record_zq_top_bg span{border-radius: 100%;width: 0.5rem;height: 0.5rem;display: inline-block;background-color: rgb(252, 180, 43);}
+			.record_zq_con{margin: 0.93rem;color: rgb(62, 62, 62);line-height: 2em;font-size: 0.87rem;}
+			.record_zq_con span{color: #6C6B6B}
+			.record_zq_bottom_bg{margin-bottom: -0.25rem;margin-left: 1.56rem;width: 65%;height: 0.62rem;text-align: right;background-color: rgb(254, 254, 254);}
+			.record_zq_bottom_bg span{margin-bottom: 1px;border-radius: 100%;width: 0.5rem;height: 0.5rem;display: inline-block;background-color: rgb(252, 180, 43);}
+			
+			/*产品支持 产品包装 产品契机*/
+			.bag_zq{margin: 2rem 0rem;font-size: 0.87rem;padding: 0.93rem;border: 2px solid rgb(240, 240, 240);color: rgb(62, 62, 62);line-height: 1.5rem;box-shadow: rgb(170, 170, 170) 0px 0px 0.18rem;}
+			.bag_zq span{line-height: 1.5rem;}
+			
+			/*品牌介绍*/
+			.intro_zq{font-size: 0.87rem;color: #6C6B6B;margin: 2rem 0rem 5rem 0rem;padding: 2rem 1rem;border-left: 3px solid rgb(252, 180, 43);border-top-width: 3px;border-right-width: 3px;border-bottom-width: 3px;border-top-left-radius: 50px;border-bottom-right-radius: 50px;box-shadow: rgb(165, 165, 165) 5px 5px 2px 0px;background-color: rgb(250, 250, 250);}
+			.intro_zq span{line-height: 1.5rem;}
+			
+			/*按钮*/
+			.footer{
+				    width: 100%;
+				    height: 4rem;
+				    line-height: 4rem;
+				    background: white;
+				    position: fixed;
+				    bottom: 0;
+				    /* left: 0; */
+				    min-width: 20rem;
+				    max-width: 35rem;
+				}
+			.footer span{color: #fff;font-weight: normal;display: block;margin: 0.5rem auto;width: 90%;text-align: center;height: 3rem;line-height: 3rem;border-radius: 1rem;border: 1px solid #d2a000;box-shadow: 0 1px 2px #fedd71 inset, 0 -1px 0 #a38b39 inset, 0 -2px 3px #fedd71 inset;background: -webkit-linear-gradient(top, #fece34, #d8a605);}
+			.footer span:active{border: 0px solid #ef4300;}
+			.footer span a{color: white;display: block;}
+			
+			/*表格*/
+			#contact input,textarea{font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;}
+			#contact{/*F9F9F9*//*background: #CCE8CF;*/margin: 0px auto;width: 90%;/*border-radius: 5%;*/}
+			#contact h4{color: #F96;display: block;font-size: 1.2rem;font-weight: bold;margin-bottom: 0.6rem;}
+			#contact input,textarea{width: 90%;border: 1px solid #CCC;background: #FFF;margin: 0 0 0.4rem;padding: 0.5rem;}
+			#contact input[type="text"]:hover,#contact input[type="email"]:hover,#contact input[type="tel"]:hover,#contact input[type="url"]:hover,#contact textarea:hover{-webkit-transition: border-color 0.3s ease-in-out;-moz-transition: border-color 0.3s ease-in-out;transition: border-color 0.3s ease-in-out;border: 1px solid #AAA;}
+			#contact textarea{height: 100px;resize: none;width: 100%;box-sizing: border-box;}
+			#contact button[type="submit"]{cursor: pointer;width: 100%;border: none;background: #0CF;color: #FFF;padding: 0.625rem;font-size: 0.9375rem;box-sizing: border-box;}
+			#contact button[type="submit"]:hover{background: #09C;-webkit-transition: background 0.3s ease-in-out;-moz-transition: background 0.3s ease-in-out;transition: background-color 0.3s ease-in-out;}
+			#contact button[type="submit"]:active{box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}
+			#contact input:focus,#contact textarea:focus{outline: 0;border: 1px solid #999;}
+			#contact .leftname{display: block;float: left;width: 20%;height: 1.875rem;line-height: 1.875rem;text-align: center;border: 1px solid #dedede;border-right: none;border-bottom-left-radius: 0.3125rem;border-top-left-radius: 0.3125rem;background-color: #dedede;box-sizing: border-box;}
+			#contact .rightinput{display: block;/*float: right;*/width: 80%;height: 1.875rem;line-height: 1.875rem;box-sizing: border-box;}
+			#contact .iblock{margin-bottom: 0.1875rem;}
+			.face{background: black;opacity: 0.6;z-index: 888;margin: 0 auto;width: 100%;height: 100%;position: fixed;top: 0;left: 0;padding-top: 20%;display: none;}
+			.info_form{padding-bottom: 2rem;z-index: 999;margin: 0 auto;width: 100%;height: 100%;top: 0;left: 0;}
+			.go{width: calc(100% - 2rem);min-width: 20rem;max-width: 33rem;background: yellow;position: fixed;top: 0;background: white;height: 3rem;line-height: 3rem;border-bottom: 1px solid #D6D5D6;box-sizing: border-box;display: none;}
+			.go1,.go2,.go3{font-weight: bold;width: 23%;height: 2rem;line-height: 2rem;text-align: center;margin: 0.5rem 5%;font-size: 0.875rem;color: black;text-shadow: 1px 1px 1px #fff;border: 1px solid #dce1e6;box-sizing: border-box;box-shadow: 0 1px 2px #fff inset, 0 -1px 0 #a8abae inset;background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);letter-spacing: 2px;/* text-indent: 8px;*/}
+			.clear{clear: both}
+			.col_red{color: #D27912;}
+			
+			/*补充layer的样式*/
+			.layui-m-layer1 .layui-m-layerchild{border: none;border-radius: 0;border-radius: 10px;min-width: 20rem;max-width: 35rem;}
+		</style>
+	</head>
+
+	<body id="body">
+		<div id="content">
+			<div class="go">
+				<a class="go1" href="#panel1" style="float: left;">产品规格</a>
+				<a class="go2" href="#panel2" style="float: left;">产品详情</a>
+				<a class="go3" href="#panel3" style="float: right;">品牌介绍</a>
+			</div>
+
+			<div class="banner_bg"> </div>
+			<!--产品标题-->
+			<div class="title_ti2">
+				<span>中秋莹月月饼礼盒</span>
+			</div>
+			<!--品鉴记录与规格-->
+			<div id="panel1" class="panel"></div>
+			<div class="record_zq">
+				<div class="record_zq_top_bg"> <span></span> </div>
+				<div class="record_zq_con"> <span class="i_strong">【品鉴记录】</span><br /> <span>回味的流心奶黄，浓厚的原味奶黄，由内而外的甘香幼滑，构成一份细腻的心思，叫人一尝再尝，从心回味。诺心诚意奉上中秋莹月月饼礼盒，让您品尝中秋佳节滋味，缔造年度相聚时刻。</span><br /> <span class="i_strong">【规 &nbsp; &nbsp; &nbsp;格】</span><br /> <span style="white-space: pre-wrap;">金沙奶黄月饼（3个）、流心奶黄月饼（3个）</span> </div>
+				<div class="record_zq_bottom_bg"> <span></span> </div>
+			</div>
+			<!--图片罗列-->
+			<div class="img_bg"> <img src="img/1-1.jpg" width="100%" height="100%"> </div>
+			<div class="img_bg"> <img src="img/1-2.jpg" width="100%" height="100%"> </div>
+			<div class="img_bg"> <img src="img/1-3.jpg" width="100%" height="100%"> </div>
+			<div id="panel2" class="panel"></div>
+			<!--商品详情介绍-->
+			<div class="text_intro intro_first"> <span class="i_strong">金沙奶黄月饼</span><br /> <span>饼皮严选优质奶油、小麦粉，黄金配比而成。</span><br/> <span>奶黄馅采用多次烘焗工艺，奶香、椰香充分相融，口感细腻清甜</span> </div>
+			<div class="img_bg"> <img src="img/1-7.jpg" width="100%" height="100%"> </div>
+			<div class="img_bg"> <img src="img/1-8.jpg" width="100%" height="100%"> </div>
+			<div class="text_intro"> <span class="i_strong">流心奶黄月饼</span><br /> <span>浓滑奶黄包裹诱人蛋黄流心，口感层次丰富 。</span><br/> <span>微波炉加热2-3秒，奶香四溢、美味到舌尖！</span> </div>
+			<div class="img_bg" style="height: 19rem;"> <img src="img/1-9.jpg" width="100%" height="100%"> </div>
+			<div class="img_bg"> <img src="img/1-10.jpg" width="100%" height="100%"> </div>
+			<!--产品支持 产品包装  产品契机-->
+			<div class="bag_zq"> <span class="i_strong">【产品支持】</span> <span>由最专业的米其林三星厨师技巧呈现以上产品优势</span><br/> <span class="i_strong">【产品包装】</span> <span> 极具中国风的装载工具，采用月宫玉兔与星月的主题元素，以兔妈妈与兔宝宝嬉戏为线索，勾勒出天伦之乐的情景。</span> <span>内置LED灯光，点亮流光溢彩，可作为孩子的手伴，童趣盎然，其乐融融。</span><br/> <span class="i_strong">【产品契机】</span> <span>在重复发放各种广式月饼的前提下，想换品牌无奈没有寻找可信度，美誉度足够的品牌，这次可以选诺心。</span> </div>
+			<div class="img_bg"> <img src="img/1-5.jpg" width="100%" height="100%"> </div>
+			<div class="img_bg"> <img src="img/1-6.jpg" width="100%" height="100%"> </div>
+			<!--品牌介绍-->
+			<div id="panel3" class="panel"></div>
+			<div class="intro_zq"> <span class="i_strong">品牌介绍</span><br/> <span>诺心LE CAKE倡导用心烘培，秉持品质用心、服务用心、创意用心的理念，每个季节、假日，都会设计不同的产品及包装，用心将诺心LE CAKE打造成精致礼物的选择之一。烘焙浓情备至的甜蜜礼物，爱与欢乐、爱与分享，真诚温馨送上。</span> <span>诺心LE CAKE崇尚：更正宗的配方，更上乘的原料配比，更醇正的浓郁滋味，更具魅力的时尚创意，更适合馈赠的礼物，更贴心的客户服务，更专业的新鲜配送，更安全的生产标准！</span> </div>
+		</div>
+		<!--按钮处-->
+		<div class="footer">
+			<span><a href="javascript:modalBottom();">点击兑换</a></span>
+		</div>
+		<div class="face" id="face"></div>
+		<!--<div class="info_form" id="info_form">
+			<form id="contact" action="" method="post">
+				<h4>请填入兑换信息</h4> 
+				姓名：<input placeholder="姓名" type="text" required autofocus><br /> 
+				电话：<input placeholder="电话" type="tel" required><br /> 
+				邮件：<input placeholder="邮箱" type="email" required><br /> 
+				地址：<input placeholder="地址" type="url" required><br /> <textarea placeholder="留言~" required></textarea><br /> 
+				<button name="submit" type="submit" id="contact-submit">我要兑换</button> 
+			</form>
+		</div>-->
+		<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+		<script type="text/javascript" src="http://cdn.huangjuntu.vip/js/layer3.0.3/mobile/layer.js"></script>
+		<script>
+//			下滑动一定距离时出现锚点
+			$(function() {
+//				测试高度
+//产品规格
+var record_zq = $(".record_zq").offset().top;
+console.log("产品规格1:"+record_zq);
+
+//产品详情
+	var intro_first = $(".intro_first").offset().top;
+	console.log("产品详情2:"+intro_first);
+
+
+//品牌介绍
+	var intro_zq = $(".intro_zq").offset().top;
+	console.log("品牌介绍3:"+intro_zq);	
+			
+				
+				
+//测试高度				
+				$(window).scroll(function() {
+					console.log("产品规格"+record_zq);
+					console.log("产品详情"+intro_first);
+					console.log("品牌介绍"+intro_zq);
+				
+					var this_scrollTop = $(this).scrollTop();
+					console.log("滚动条范围"+this_scrollTop);
+//					
+//				产品规格1:416
+//index2.html:184 产品详情2:1324.65625
+//index2.html:189 品牌介绍3:3281.90625
+					
+					if(this_scrollTop >= 250.09375) {
+						
+						if(this_scrollTop > record_zq*0.9 && this_scrollTop < intro_first *0.9) {
+							$(".go1").addClass("col_red");
+							$(".go2").removeClass("col_red");
+							$(".go3").removeClass("col_red");
+							
+							
+						} if( intro_first*0.9 <= this_scrollTop && this_scrollTop <=intro_zq*0.8){
+							$(".go1").removeClass("col_red");
+							$(".go3").removeClass("col_red");
+							$(".go2").addClass("col_red");
+							
+						}if( intro_zq*0.8 < this_scrollTop){
+							$(".go2").removeClass("col_red");
+							$(".go1").removeClass("col_red");
+							$(".go3").addClass("col_red");
+						}
+						$(".go").show();
+					} else {
+						$(".go").hide();
+					}
+				});
+			});
+			
+			
+//			else{
+//							$(".go1").removeClass("col_red");
+//						}
+			
+//			兑换点击按钮
+			function modalBottom() {
+				layer.open({
+					type: 1,
+					title: "请填入兑换信息",
+					closeBtn: 0,
+					shadeClose: true,//点击遮罩关闭
+					skin: 'yourclass',
+					content: '<div class="info_form" id="info_form">\
+					<form id="contact" action="" method="post">\
+						<div class="iblock"><span class="leftname">姓名</span><input placeholder="请输入收货人姓名" type="text" required autofocus class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">电话</span><input placeholder="请输入收货人电话" type="tel" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">邮件</span><input placeholder="请输入收货人邮箱" type="email" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">地址</span><input placeholder="请输入收货人地址" type="text" required class="rightinput"></div><div class="clear"></div>\
+						<textarea placeholder="留言~" required></textarea>\
+						<button name="submit" type="submit" id="contact-submit">我要兑换</button> \
+					</form>\
+				</div>'
+				});
+
+			}
+		</script>
+	</body>
+
+</html>
