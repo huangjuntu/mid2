@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
-		<title>2-本来生活水果</title>
+		<title>3-博影电子券</title>
 		<style>
 			/*全局公共样式*/input,button,select,textarea{outline: none;}
 			*{padding: 0px;margin: 0px;}
@@ -26,7 +26,7 @@
             .title_ti2 span{color: #FFFFFF;font-size: 0.92rem;display: block;margin: 0 auto;height: 6rem;line-height: 6rem;text-align: center;}
 			
 			/*图片样式*/
-			.img_bg{width: 100%;height: auto;margin-bottom: 0.5rem;border-radius: 51px;overflow: hidden;}
+			.img_bg{width: 100%;height: auto;margin-bottom: 2rem;border-radius: 10px;overflow: hidden;border: 1px solid #DADADA;}
 			
 			/*商品文字信息介绍*/
 			.text_intro{background: rgb(241, 241, 241) url(__PUBLIC__/img/quot.jpg) no-repeat 1% 0.31rem;color: #6C6B6B;margin: 10px 0px;padding: 0.93rem 1.25rem 0.93rem 2.81rem;font-size: 0.87rem;line-height: 1.39rem;outline: 0px;border: 0px currentcolor;vertical-align: baseline;}
@@ -49,7 +49,7 @@
 			.bag_zq span{line-height: 1.5rem;}
 			
 			/*品牌介绍*/
-			.intro_zq{font-size: 0.87rem;color: #6C6B6B;margin: 2rem 0rem 5rem 0rem;padding: 2rem 1rem;border-left: 3px solid rgb(252, 180, 43);border-top-width: 3px;border-right-width: 3px;border-bottom-width: 3px;border-top-left-radius: 50px;border-bottom-right-radius: 50px;box-shadow: rgb(165, 165, 165) 5px 5px 2px 0px;background-color: rgb(250, 250, 250);}
+			.intro_zq{font-size: 0.87rem;color: #6C6B6B;margin: 2rem 0rem 2rem 0rem;padding: 2rem 1rem;border-left: 3px solid rgb(252, 180, 43);border-top-width: 3px;border-right-width: 3px;border-bottom-width: 3px;border-top-left-radius: 50px;border-bottom-right-radius: 50px;box-shadow: rgb(165, 165, 165) 5px 5px 2px 0px;background-color: rgb(250, 250, 250);}
 			.intro_zq span{line-height: 1.5rem;}
 			
 			/*按钮*/
@@ -82,17 +82,36 @@
 			
 			/*补充layer的样式*/
 			.layui-m-layer1 .layui-m-layerchild{border: none;border-radius: 0;border-radius: 10px;min-width: 20rem;max-width: 35rem;}
-		
-			/*配送范围*/
-			.rang{ width: 100%;
-				    padding: 0.9375rem;
-				    background: #F1F1F1;
-				    line-height: 1.875rem;
-				    font-size: 0.875rem;
-				    box-sizing: border-box;
-				    border-left: 0.3125rem solid #0099CC;
-				    margin-bottom: 1.25rem;}
 
+			/*配送范围*/
+			.rang{width: 100%;padding: 0.9375rem;background: #F1F1F1;line-height: 1.875rem;font-size: 0.875rem;box-sizing: border-box;border-left: 0.3125rem solid #0099CC;margin-bottom: 1.25rem;}
+			
+			/*兑换流程*/
+			.mov_exchange{margin-top: 2rem;}
+			.mov_exchange span{color: #6C6B6B;display: inline-block;margin: 0 0 1rem 0;line-height: 1.5rem;font-size: 0.875rem;}
+			
+			/*影院列表*/
+			.mov_list{margin: 0 0 5rem 0;}
+			.mov_list span{color: #6C6B6B;font-size: 0.875rem;line-height: 1.5rem;}
+			
+			/*下面的电影影院列表*/
+			.movie_tc{margin: 1rem 0;}
+			.movie_tc table{border-collapse: collapse;border-spacing: 0px;font-size: 0.8rem !important;width: 100%;}
+			.movie_tc .table1{border-left: 2px solid #F1F1F1;border-top: 2px solid #F1F1F1;}
+			.movie_tc .table1 th{border-right:1px solid #7FAF3F;border-bottom:1px solid #7FAF3F;}
+			.movie_tc .table2_con{overflow-y:scroll ;height: 20rem;border-left: 2px solid #F1F1F1;border-bottom: 2px solid #F1F1F1;}
+			.movie_tc .table2_con .table2 tr{border-bottom:1px solid #7FAF3F;}
+			.movie_tc .table2_con .table2 td{border-right:1px solid #7FAF3F;}
+			.movie_tc .table1 .bg_line{background: #DEDEDE;height: 2rem;line-height: 2rem;}	
+			.movie_tc .table1 .one{height: 2rem;line-height: 2rem;background: #7FAF3F;font-size: 1.2rem;color: white}
+			
+			.movie_tc .table2_con .table2 tr:last-child{border-bottom: 0;}
+			.movie_tc table td{height: 1rem;line-height: 1rem;padding: 0.5rem;color:#6C6B6B;}
+			.movie_tc table td:first-child{font-weight: bold;font-size: 0.9rem;color:#D87912;}
+			
+			.movie_tc .table2_con .table2 .star{text-align: center;font-size: 0.4rem;font-family: 宋体;}
+			.movie_tc .table2_con .table2 .two{font-weight: normal !important;font-size: 0.8rem !important;}
+				
 		</style>
 	</head>
 
@@ -101,148 +120,158 @@
 		<div id="content">
 			<div class="go">
 				<a class="go1" href="#panel1" style="float: left;">产品规格</a>
-				<a class="go2" href="#panel2" style="float: left;">产品详情</a>
-				<a class="go3" href="#panel3" style="float: right;">品牌介绍</a>
+				<a class="go2" href="#panel2" style="float: left;">兑换流程</a>
+				<a class="go3" href="#panel3" style="float: right;">使用规则</a>
 			</div>
 
 			<!--产品标题-->
 			<div class="title_ti2">
-				<span>本来生活花好月圆水果组合</span>
+				<span>博影电影通票（电子券）</span>
 			</div>
 			<!--品鉴记录与规格-->
 			<div id="panel1" class="panel"></div>
 			<div class="record_zq">
 				<div class="record_zq_top_bg"> <span></span> </div>
-				<div class="record_zq_con"> <span class="i_strong">【品鉴记录】</span><br /> 
+				<div class="record_zq_con"> <span class="i_strong">【品鉴记录】</span><br />
 					<span>
-						选取当地当季新鲜水果营养丰富，水果大小、形状、色泽良好、足斤足两，入口鲜香、甜
-						酸适宜、水分充足，水果采取原产地直采，本来生活生鲜直送保证其新鲜度。
-					</span><br /> 
-					<span class="i_strong">【规 &nbsp;格】</span><br /> 
-					<h4>A类配2件、B类配2件、C类配1件、D类配1件，共6件（根据时令配送对应果品，具体以实际收到为准）</h4>
-					<ul>
-						<li><span class="cat">A类：</span>梨(6-9粒)、国产苹果(6-9粒)、柠檬(4-6粒)、李子(1KG)、甜瓜(1-2粒)、圣女果(1KG)</li>
-						<li><span class="cat">B类：</span>水蜜桃(6粒)、油桃(4-6粒)、龙眼(1KG)、哈密瓜(1粒)、百香果(500G) </li>
-						<li><span class="cat">C类：</span>进口苹果(8粒)、进口橙(12粒)、进口火龙果(2.2-2.5KG)、新疆西州蜜(1.5KG以上) </li>
-						<li><span class="cat">D类：</span>进口金奇异果(5-6粒)、进口牛油果(4-6粒)、台湾凤梨(1.3KG左右)、进口山竹(1KG) </li>
-					</ul>
-					
+						博影电影通票，一券在手，全国通用，让您爱上电影，爱上生活。
+						您也可以为远在他乡的家人朋友订票，让他们在周末看上一场精彩的电影。
+						支持手机端选座功能，也支持微信查询等功能，足不出户动动手指即可。
+						另为您配备专属售后服务团队，为您解决线上线下的问题咨询
+
+					</span><br />
+					<span class="i_strong">【规 &nbsp;格】</span><br />
+					<span><h5>博影电影通票（电子券）4张  </h5> 
+					<font color="red">有效期至2018年12月31日</font><br />
+					15位电子券号，通过短信发送至指定手机号，请注意保管
+					</span>
+
 				</div>
 				<div class="record_zq_bottom_bg"> <span></span> </div>
 			</div>
 			<!--图片罗列-->
-			<div class="img_bg"> <img src="__PUBLIC__/img/2/main1.jpeg" width="100%" height="100%"> </div>
-			<div class="img_bg"> <img src="__PUBLIC__/img/2/main2.jpeg" width="100%" height="100%"> </div>
-			<div class="img_bg"> <img src="__PUBLIC__/img/2/main3.jpeg" width="100%" height="100%"> </div>
-				
-			<!--配送范围-->
-			<div class="rang">
-				配送范围：
-				上海、北京、深圳、广州、天津、苏州、杭州、南京、常州、淮安、连云港、
-				南通、宿迁、台州、无锡、徐州、盐城、扬州、镇江、湖州、嘉兴、金华、宁波、
-				绍兴、泰州、温州、舟山、佛山、东莞、惠州、珠海。
-			</div>
+			<div class="img_bg"> <img src="__PUBLIC__/img/3/love_movie.png" width="100%" height="100%"> </div>
+
+			<!--兑换流程-->
 			<div id="panel2" class="panel"></div>
-			
-			<!--商品详情介绍-->
-			<div class="text_intro intro_first">
-				<span class="i_strong">佳沛新西兰金奇异果</span><br />
-				<span>
-					佳沛新西兰金奇异果果心细、皮薄、果肉爽滑无比、甜蜜水润，外形长圆，几乎无毛。
-					常温可放置7天左右，冷藏可延续至20-25天。富含维生素C、E、叶酸、膳食纤维等多种营养物质。
-				</span><br/>
+			<div class="mov_exchange">
+				<span class="i_strong">【兑换流程】</span><br />
+				<span class="i_strong">一、通过微信兑换：</span><br />
+				<div class="exchange">
+					<span>1.关注博影微信公众号“boyingsj”</span><br />
+					<div class="img_bg"> <img src="__PUBLIC__/img/3/3-1.jpg" width="100%" height="100%"> </div>
+				</div>
+				<div class="exchange">
+					<span>2.进入博影公众号，点击“博影电影—在线购票”，在线选择影片及电影院</span><br />
+					<div class="img_bg"> <img src="__PUBLIC__/img/3/3-2.jpg" width="100%" height="100%"> </div>
+				</div>
+				<div class="exchange">
+					<span>3.确定订单页面，选择博影电子券，输入券号及验证码支付即可。</span><br />
+					<div class="img_bg"> <img src="__PUBLIC__/img/3/3-3.jpg" width="100%" height="100%"> </div>
+					<span>4.购票完成后，取票验证码将发送至指定手机号</span><br />
+				</div>
+
+				<span class="i_strong">二、通过官网兑换：</span><br />
+				<div class="exchange">
+					<span>1.进入博影官网：http://www.boyingsj.com/，在线选择影片及电影院</span><br />
+					<div class="img_bg"> <img src="__PUBLIC__/img/3/3-4.png" width="100%" height="100%"> </div>
+				</div>
+				<div class="exchange">
+					<span>2.输入手机号码，购票完成后取票验证码将发送到此手机号。
+					选择“博影电子券”输入电子券号和验证码支付
+					</span><br />
+					<div class="img_bg"> <img src="__PUBLIC__/img/3/3-5.png" width="100%" height="100%"> </div>
+					<span>3.购票完成后，取票验证码将发送至指定手机号。</span>
+				</div>
 			</div>
-			<div class="img_bg"> <img src="__PUBLIC__/img/2/kiwi1.jpg" width="100%" height="100%"> </div>
-			<div class="img_bg"> <img src="__PUBLIC__/img/2/kiwi2.jpg" width="100%" height="100%"> </div>
-			<div class="text_intro">
-				<span class="i_strong">美国新奇士橙</span><br />
-				<span>
-					精选美国进口新奇士橙果圆形至长圆形，橙黄色，油胞凸起，果皮不易剥离。中心柱充实；
-					汁味甜而香。含有大量的糖和一定量的柠檬酸以及丰富的维生素C，营养价值较高。果实还含
-					维生素P，具有极高的医药价值。
-				</span><br/>
-			</div>
-			<div class="img_bg" style="height: 19rem;">
-				<img src="__PUBLIC__/img/2/orange1.jpg" width="100%" height="100%">
-			</div>
-			<div class="img_bg">
-				<img src="__PUBLIC__/img/2/orange2.jpg" width="100%" height="100%">
-			</div>
-			
-			<div class="text_intro">
-				<span class="i_strong">安岳柠檬</span><br />
-				<span>
-					饱满结实，皮薄少核，汁多肉嫩，柠檬的酸入口虽刺激却回味清爽，
-					与其他食物融合，时常会有惊喜的效果。
-				</span><br/>
-			</div>
-			<div class="img_bg" style="height: 19rem;">
-				<img src="__PUBLIC__/img/2/lemon1.jpg" width="100%" height="100%">
-			</div>
-			<div class="img_bg">
-				<img src="__PUBLIC__/img/2/lemon2.jpg" width="100%" height="100%">
-			</div>
-			
-			<div class="text_intro">
-				<span class="i_strong">新疆西州蜜瓜</span><br />
-				<span>
-					新疆西州蜜瓜拥有橘黄的果肉，成熟度越高，中心越发橘红；果肉厚亦带软滑，
-					果刀切下可听“咔嚓”清脆声；入口即感爽脆，多汁水润，果香清新淡雅而不腻，
-					盈溢口腔；味如蜜甜，顷刻回甘，生津解腻。
-				</span><br/>
-			</div>
-			<div class="img_bg" style="height: 19rem;">
-				<img src="__PUBLIC__/img/2/hami1.jpg" width="100%" height="100%">
-			</div>
-			<div class="img_bg">
-				<img src="__PUBLIC__/img/2/hami2.jpg" width="100%" height="100%">
-			</div>
-			
-			<div class="text_intro">
-				<span class="i_strong">越南红心火龙果</span><br />
-				<span>
-					精选越南红心火龙果，越南地属热带季风气候，常年适宜的温度和光照，
-					让火龙果享受充足的日光浴。火龙果外表红艳张扬，内里玫瑰色果肉，
-					果肉饱满绵软，口感丝滑多汁，娇艳欲滴。相比普通白心火龙果更水嫩，
-					口感更清爽，清甜而不腻，隐约中透露着兰花芳香。
-				</span><br/>
-			</div>
-			<div class="img_bg" style="height: 19rem;">
-				<img src="__PUBLIC__/img/2/pitaya1.jpg" width="100%" height="100%">
-			</div>
-			<div class="img_bg">
-				<img src="__PUBLIC__/img/2/pitaya2.jpg" width="100%" height="100%">
-			</div>
-			
-			<div class="text_intro">
-				<span class="i_strong">泰国进口龙眼</span><br />
-				<span>
-					泰国龙眼，果中明珠，肉厚核小，圆润透亮，细嫩香滑，蜜甜多汁。
-					颜-如玉，圆若骊珠，赤若金丸，肉似波利，核如黑漆。
-					味-蜜甜，剥开薄薄的褐色表皮，蹦出的蜜汁沾满指尖，果肉莹润饱满如明珠，入口蜜甜润喉。
-				</span><br/>
-			</div>
-			<div class="img_bg" style="height: 19rem;">
-				<img src="__PUBLIC__/img/2/longan1.jpg" width="100%" height="100%">
-			</div>
-			<div class="img_bg">
-				<img src="__PUBLIC__/img/2/longan2.jpg" width="100%" height="100%">
-			</div>
-			
+
 			<!--品牌介绍-->
 			<div id="panel3" class="panel"></div>
 			<div class="intro_zq">
-				<span class="i_strong">品牌介绍</span><br/>
+				<span class="i_strong">使用规则：</span><br/>
 				<span>
-					本来生活网精选来自全世界的优质、健康、绿色、有机、品牌食材食品，
-					基地直供、冷链配送、安全检测，服务到家。我们始终将安全视为首要原则，
-					成立了品控委员会，围绕生产者、职能部门、认证标准、监控、检测、消费者
-					等环节设立6道安全屏障；坚持对每一批次的农产品进行43项常规项目抽检，可将
-					最常见、最易添加的重金属、农药残留、添加剂等危害拒之门外。
+					1） 本券仅限于在博影网上购买电影票时使用，本券可兑换2D/3D电影票；<br />
+					2） 本券不支持兑换4D/IMAX场次、2月14日情人节、12月24日平安夜、12月25日圣诞节、12月31日迎新夜、1月1日元旦等，及其他特殊的场次；<br />
+					3） 本券为一次性消费券，不记名、不挂失、不兑现、不找零，一经发出概不退换；<br />
+					4） 本券有效期至2018年12月31日；<br />
+					5） 使用本券时，不可参与其他电影票相关促销活动，也不可与其他抵用券同时使用；<br />
+					6） 本券可使用影院按售票时约定为准，也可关注博影微信公众号“boyingsj” 或通过博影官网http://www.boyingsj.com/ 查询，下方影院列表仅供参考；<br />
+					7）如本券无法使用请联系博影客服热线：400-108-5665（周一到周日，早9点至晚21点）。<br />
+					8）此券最终解释权归博影所有。<br />
+
 				</span>
 			</div>
+			<!--影院列表-->
+			<div class="mov_list">
+				<span class="i_strong">【影院列表】</span><br/>
+				<!--博影E类电子券资源---begin-->
+				<div class="movie_tc">
+					<table class="table1" cellpadding="5" cellspacing="0">
+						<tr>
+							<th colspan="4" class="one" style="width: 100%;">博影E类电子券资源<span style="color: red; font-weight: normal;font-size: 0.75rem;">(部分)</span></th>
+						</tr>
+						<tr class="bg_line">
+							<th style="width: 20%;">城市</th>
+							<th style="width: 20%;">行政区</th>
+							<th style="width: 25%;">影院名称</th>
+							<th style="width: 35%;">地址</th>
+						</tr>
+					</table>
+
+					<div class="table2_con">
+						<table class="table2">
+							<colgroup width="20%"></colgroup>
+							<colgroup width="20%"></colgroup>
+							<colgroup width="25%"></colgroup>
+							<colgroup width="35%"></colgroup>
+							<tr>
+								<td>阿拉善盟</td>
+								<td>额济纳旗</td>
+								<td>阿拉善宏普摩天影都</td>
+								<td>阿拉善盟额济纳旗达来呼布镇苏泊淖尔北路与胡杨街交叉路口西北角金洋酒店二楼</td>
+							</tr>
+							<tr>		
+								<td>安康	</td>
+								<td>镇坪县</td>
+								<td>镇平县汇丰国际影城</td>
+								<td>安康市镇坪县城关上新街文化大厦一楼</td>
+							</tr>
+							<tr>		
+								<td>安康	</td>
+								<td>镇坪县</td>
+								<td>镇平县汇丰国际影城</td>
+								<td>安康市镇坪县城关上新街文化大厦一楼</td>
+							</tr>
+							<tr>		
+								<td>安康	</td>
+								<td>镇坪县</td>
+								<td>镇平县汇丰国际影城</td>
+								<td>安康市镇坪县城关上新街文化大厦一楼</td>
+							</tr>
+							<tr>		
+								<td>安康	</td>
+								<td>镇坪县</td>
+								<td>镇平县汇丰国际影城</td>
+								<td>安康市镇坪县城关上新街文化大厦一楼</td>
+							</tr>
+							<tr>		
+								<td>安康	</td>
+								<td>镇坪县</td>
+								<td>镇平县汇丰国际影城</td>
+								<td>安康市镇坪县城关上新街文化大厦一楼</td>
+							</tr>
+						</table>
+					</div>
+
+				</div>
+				<!--博影E类电子券资源---end-->
+				<span><font style="color: red;">点击链接下载：Excel：博影E类电子券资源<br>
+				<a href="http://www.baidu.com" style="text-decoration: underline;"> http://www.baidu.com</a>
+				</font></span>
+			</div>
+
 		</div>
-		
+
 		<!--按钮处-->
 		<div class="footer">
 			<span><a href="javascript:modalBottom();">点击兑换</a></span>
@@ -251,47 +280,48 @@
 		<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
 		<script type="text/javascript" src="http://cdn.huangjuntu.vip/js/layer3.0.3/mobile/layer.js"></script>
 		<script>
-//			下滑动一定距离时出现锚点
+			//			下滑动一定距离时出现锚点
 			$(function() {
 				//产品规格高度
 				var record_zq = $(".record_zq").offset().top;
-				console.log("产品规格1:"+record_zq);
-				
-				//产品详情高度
-					var intro_first = $(".intro_first").offset().top;
-					console.log("产品详情2:"+intro_first);
-				
-				//品牌介绍高度
-					var intro_zq = $(".intro_zq").offset().top;
-					console.log("品牌介绍3:"+intro_zq);	
-				
+				console.log("产品规格1:" + record_zq);
+
+				//流程 高度
+				var mov_exchange = $(".mov_exchange").offset().top;
+				console.log("产品详情2:" + mov_exchange);
+
+				//使用规则 高度
+				var intro_zq = $(".intro_zq").offset().top;
+				console.log("品牌介绍3:" + intro_zq);
+
 				//测试高度				
 				$(window).scroll(function() {
-					console.log("产品规格"+record_zq);
-					console.log("产品详情"+intro_first);
-					console.log("品牌介绍"+intro_zq);
-				
+					console.log("产品规格" + record_zq);
+					console.log("流程 高度" + mov_exchange);
+					console.log("使用规则" + intro_zq);
+
 					var this_scrollTop = $(this).scrollTop();
-					console.log("滚动条范围"+this_scrollTop);
-				
-					//产品规格1（record_zq）:416
-					//产品详情2（intro_first）:1324.65625
-					//品牌介绍3（intro_zq）:3281.90625
-					
+					console.log("滚动条范围" + this_scrollTop); //336
+
+					//产品规格1（record_zq）:384
+					//流程 高度2（mov_exchange）:953.65625
+					//使用规则 高度3（intro_zq）:3941.65625
+
 					if(this_scrollTop >= 250.09375) {
-						
-						if(this_scrollTop > record_zq*0.9 && this_scrollTop < intro_first *0.9) {
+
+						if(this_scrollTop > record_zq * 0.7 && this_scrollTop < mov_exchange * 0.9) {
 							$(".go1").addClass("col_red");
 							$(".go2").removeClass("col_red");
 							$(".go3").removeClass("col_red");
-							
-							
-						} if( intro_first*0.9 <= this_scrollTop && this_scrollTop <=intro_zq*0.8){
+
+						}
+						if(mov_exchange * 0.9 <= this_scrollTop && this_scrollTop <= intro_zq * 0.95) {
 							$(".go1").removeClass("col_red");
 							$(".go3").removeClass("col_red");
 							$(".go2").addClass("col_red");
-							
-						}if( intro_zq*0.8 < this_scrollTop){
+
+						}
+						if(intro_zq * 0.95 < this_scrollTop) {
 							$(".go2").removeClass("col_red");
 							$(".go1").removeClass("col_red");
 							$(".go3").addClass("col_red");
@@ -302,14 +332,14 @@
 					}
 				});
 			});
-			
-//			兑换点击按钮
+
+			//			兑换点击按钮
 			function modalBottom() {
 				layer.open({
 					type: 1,
 					title: "请填入兑换信息",
 					closeBtn: 0,
-					shadeClose: true,//点击遮罩关闭
+					shadeClose: true, //点击遮罩关闭
 					skin: 'yourclass',
 					content: '<div class="info_form" id="info_form">\
 					<form id="contact" action="" method="post">\

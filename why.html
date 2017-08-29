@@ -19,16 +19,40 @@
 			
    
 			/*图片样式*/
-			.img_mo{position: relative; float: left;margin:0 1% 1rem 1%;width: 48%; height: 13rem;background: url(__PUBLIC__/img/line_bg.png) repeat;padding-bottom: 0.5rem;box-shadow: 0px 0px 0.31rem #333;}
+			.img_mo{
+				position: relative; float: left;margin:0 1% 1rem 1%;width: 48%; height: 13rem;
+				background: url(__PUBLIC__/img/line_bg.png) repeat;
+				padding-bottom: 0.5rem;box-shadow: 0px 0px 0.31rem #333;
+				    box-sizing: border-box;
+				}
 			.img_mo_pg{width: 100%; height: 8rem;}
 			.img_mo_pg img{width: 100%; height: 100%;}
 			
-			.mo_bottom{width: 100%;margin-top: 0.2rem;display: block;z-index: 999;text-align: center; background-color: rgba(254,254,254,0.2);}
+			.mo_bottom{
+				padding: 0.2rem 0.2rem 0 0.2rem;
+				color: #6e6e6e;
+			    font-size: 0.87rem;
+			    font-weight: bold;
+			    height: 5rem;
+			    width: 100%;
+			    box-sizing: border-box;
+			    background: pink;
+			    line-height: ;
+			    background: yellow;
+				 }
    			.mo_bottom .one{
-   				color:#6e6e6e; font-size:0.87rem;font-weight: bold;margin-top: 0.2rem;
-				    padding: 0.2rem 0.8rem;
-				    box-sizing: border-box;
-				    display: block;*/
+			    text-align: center;
+			    color: #6e6e6e;
+			    font-size: 0.87rem;
+			    font-weight: bold;
+			    margin-top: 0.2rem;
+			    /*box-sizing: border-box;*/
+			    border: 1px solid red;
+			    display: inline-block;
+			    position: absolute;
+			    top: 0;
+			    left: 50%;
+			    top: 50%;
    				}
    			.mo_bottom .two{color:#6e6e6e;  font-size:0.62rem}
    			.mo_bottom .three{
@@ -57,7 +81,7 @@
 				<div class="mo_bottom">
 					<!--<span class="one">歌帝梵冰淇淋球</span><br/>
 					<span class="two" >歌帝梵冰淇淋球</span><br/>-->
-					<span class="one">适用于两适用于两适用于两适用于两</span>
+					<span class="one">歌帝梵冰淇淋球淇淋球淇淋球淇淋球</span>
 					<span class="three"><a href="index2-1.html">查看详情</a></span>
 				</div>
 			</div>
@@ -71,8 +95,8 @@
 			<div class="img_mo">
 				<div class="img_mo_pg"><img src="__PUBLIC__/img/1-1.jpg"/></div>
 				<div class="mo_bottom">
-					<span class="one">歌帝梵冰</span><br/>
-					<span class="three"><a href="index2-3.html">查看详情</a></span>
+					<span class="one">歌帝梵冰淇淋球</span><br/>
+					<span class="three"><a href="index2-1.html">查看详情</a></span>
 				</div>
 			</div>
 			<div class="img_mo">
@@ -99,6 +123,19 @@
 			</div>
 			<div style="clear: both;"></div>
 		</div>
+		<!--<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+		<script>
+			$(".one").each(function(index){
+			var ww_width = $(".one").eq(index).width();
+			var ww_height = $(".one").eq(index).height();
+			var mar = ww_width*0.5;
+			var mar1 = ww_height*0.5;
+			$(".one").eq(index).css("margin-left","-"+mar+"px");  
+			$(".one").eq(index).css("margin-bottom","-"+mar1+"px");
+					console.log(mar);
+					console.log(mar1);	
+			});
+		</script>-->
 		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 		<script>
 		var divArr = document.getElementsByClassName("one");//获取one标签 
@@ -107,20 +144,29 @@
 
 		for(var i=0;i<cnt;i++){
 			var oneh=new Array();
-			oneh[i]=$(".one").eq(i).height();			
-			if(oneh[i]>temph){
-				temph=oneh[i];
-			}else{
-				//temph=temph;
-			}
+			oneh[i]=$(".one").eq(i).width();
+			
+//			console.log(oneh[i]);
+			
+			
+			
+//			$(".one").eq(i).css("margin-left",-oneh[i]*0.5);  
+//			var xx = oneh[i]*0.5+'px';
+//			
+			
+			
+//			var y =$(".one").eq(1).width();
+//			console.log(x+"+"+y);
+			
+//			if(oneh[i]>temph){
+//				temph=oneh[i];
+//			}else{
+//				//temph=temph;
+//			}
 		}	
-							
-		for(var i=0;i<cnt;i++){		
-			if($(".one").eq(i).height()<temph){
-				$(".one").eq(i).css("height",temph);
-				$(".one").eq(i).css("line-height",temph+"px");
-			} 
-		}
+		var x =$(".one").eq(0).width();
+			console.log("第一个宽："+x);
+//		$(".one").eq(0).css("margin-left",-x*0.5);
 		</script>
 	</body>
 

@@ -15,27 +15,36 @@
 			body,html{height: auto;margin: 0 auto;min-width: 20rem;max-width: 35rem;}
 			
 			/*banner的背景*/
-			#content{width: 100%;margin: 0 auto;background: url(img/login_bg2.jpg) no-repeat;background-size:100% 100%;}
-			html{position:relative;width: 100%;height: 100%;background: url(img/bg_bg.png) repeat;background-size: 100% 100%;}
+			#content{width: 100%;margin: 0 auto;background: url(__PUBLIC__/img/login_bg2.jpg) no-repeat;background-size:113% 100%;}
+			html{position:relative;width: 100%;height: 100%;background: url(__PUBLIC__/img/bg_bg.png) repeat;background-size: 100% 100%;}
 			.logo_box{width: 100%;color: #EEE;position: absolute;left: 50%;top: 35%;margin-left: -50%;}
 			.forms{width: 17.5rem;height: 30.3125rem;}
-			.input_outer{height: 2.875rem;width: 80%;margin: 1rem auto;border-radius: 3.125rem;border: rgb(234, 225, 57) 2px solid !important;}
+			.input_outer{width: 80%;margin: 1rem auto;border-radius: 3.125rem;border: rgb(234, 225, 57) 2px solid !important;}
+			
+			
 			.logo_box p{text-align: center;color: #333333;line-height: 1.5625rem;height: 1.5625rem;font-size: 0.875rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
-			.u_user{width: 1.5625rem;height: 1.5625rem;background: url(img/login_ico.png);background-position: -7.8125rem 0;position: absolute;margin: 0.625rem 0.8125rem;}
-			.us_uer{width: 1.5625rem;height: 1.5625rem;background-image: url(img/login_ico.png);background-position: -7.8125rem -2.125rem;position: absolute;margin: 0.625rem 0.8125rem;}
+			.u_user{width: 1.5625rem;height: 1.5625rem;background: url(__PUBLIC__/img/login_ico.png);background-position: -7.8125rem 0;position: absolute;margin: 0.625rem 0.8125rem;}
+			.us_uer{width: 1.5625rem;height: 1.5625rem;background-image: url(__PUBLIC__/img/login_ico.png);background-position: -7.8125rem -2.125rem;position: absolute;margin: 0.625rem 0.8125rem;}
 			.l-login{position: absolute;z-index: 1;left: 3.125rem;top: 0;height: 2.875rem;font: 0.875rem "microsoft yahei", Helvetica, Tahoma, Arial, "Microsoft jhengHei";line-height: 2.875rem;}
-			.text{width: 13.75rem;height: 2.875rem;outline: none;display: inline-block;font: 0.875rem "microsoft yahei", Helvetica, Tahoma, Arial, "Microsoft jhengHei";margin-left: 3.125rem;border: none;background: none;line-height: 2.875rem;}
+			.text{
+				    width: 13.75rem;height: 2rem;outline: none;display: inline-block;font: 0.875rem "microsoft yahei", Helvetica, Tahoma, Arial, "Microsoft jhengHei";margin-left: 3.125rem;
+				    border: none;
+				    background: none;
+				    line-height: 2rem;
+				    /* text-align: center; */
+				    vertical-align: ce;
+				    vertical-align: center;
+				    vertical-align: middle;
+				    padding: 0.5rem;
+				}
 			.mb2{margin-bottom: 1.875rem;margin: 1rem auto;width: 80%;}
 			.mb2 a{text-decoration: none;outline: none;}
 			.submit{padding: 0.9375rem;margin-top: 1.25rem;display: block;}
 			.act-but{line-height: 1.25rem;text-align: center;font-size: 1.25rem;border-radius: 3.125rem;background: #cf271a;}
 			@media only screen and (min-width: 450px)  {
-				#content{width: 100%;margin: 0 auto;background: url(img/login_bg2.jpg) no-repeat;background-size: 100% auto;}
+				#content{width: 100%;margin: 0 auto;background:url(__PUBLIC__/img/login_bg2.jpg) no-repeat;/*background-size: 100% auto;    */background-size: 113% 100%;}
 				.logo_box{width: 100%;color: #EEE;position: absolute;left: 50%;top: 47%;margin-left: -50%;}
 			}
-			
-			
-			
 		</style>
 	</head>
 
@@ -48,9 +57,10 @@
 						<span class="u_user"></span>
 						<input name="logname" class="text" style="color: #6E6E6E !important" type="text" placeholder="请输入卡号">
 					</div>
+					
 					<div class="input_outer">
 						<span class="us_uer"></span>
-						<input name="logpass" class="text" style="color: #6E6E6E !important; position:absolute; z-index:100;" value="" type="password" placeholder="请输入密码">
+						<input name="logpass" class="text" style="color: #6E6E6E !important;" value="" type="password" placeholder="请输入密码">
 					</div>
 					<div class="mb2">
 						<a class="act-but submit" href="index1.html" style="color: #FFFFFF">登录</a>
