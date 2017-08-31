@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
-		<title>11-最福利菌菇</title>
+		<title>B1-YUFU保温壶</title>
 		<style>
 			/*全局公共样式*/input,button,select,textarea{outline: none;}
 			*{padding: 0px;margin: 0px;}
@@ -86,7 +86,7 @@
 
 			<!--产品标题-->
 			<div class="title_ti2">
-				<span>德福隆 壹品野山菌菇礼盒</span>
+				<span>Paul Frank 保温壶</span>
 			</div>
 			
 			<!--品鉴记录与规格-->
@@ -96,20 +96,14 @@
 				<div class="record_zq_con"> 
 					<span class="i_strong">【品鉴记录】</span><br /> 
 					<span>
-						德福隆 壹品野山菌菇礼盒内含8种来自于正宗产品的精选食材，用心严选良品，精心工艺制作，放心味道口感，营养丰富，品质保障。
+						造型时尚，壶身采用PP新料，镀铜玻璃内胆，密封性更强，保温时间更长。外形优雅，采用球形瓶体锥形瓶颈工艺设计，欧式时尚的外观下是大容量体积。内胆更采用高硼硅酸盐玻璃制成，对人体安全无害。不要刻板，不要庄严，保温壶照样可以将呆萌态度搬上身，去追求年轻与自在。
 					</span><br />
 					<span class="i_strong">【规 &nbsp;格】</span><br />
 					<span>
-						德福隆椴木香菇   108g<br />
-						德福隆野生黑木耳  98g<br />
-						德福隆滑子菇   108g<br />
-						德福隆茶树菇   108g<br />
-						德福隆真姬菇     108g<br />
-						德福隆若羌灰枣  198g<br />
-						德福隆桂圆   178g<br />
-						德福隆雪花银耳    58g<br />
-						精品礼盒（280*280*380）<br /><br />
-						保质期：24个月
+						型号：PFC901-1000<br />
+						容量：1000ml<br />
+						材质：玻璃内胆+PP<br />
+						保温功效：12小时60℃<br />
 					</span>
 				</div>
 				<div class="record_zq_bottom_bg"> <span></span></div>
@@ -117,14 +111,14 @@
 			
 			<!--图片罗列-->
 			<div id="panel2" class="panel"></div>
-			<div class="img_bg intro_jungu"><img src="__PUBLIC__/img/11/11-C.png" width="100%" height="100%"></div>
-			
+			<div class="img_bg intro_bwh"><img src="__PUBLIC__/img/B1/b1-bwh.jpg" width="100%" height="100%"></div>
+				
 			<!--品牌介绍-->
 			<div id="panel3" class="panel"></div>
 			<div class="intro_zq">
 				<span class="i_strong">品牌介绍</span><br/>
 				<span>
-					上海德福隆农业科技有限公司是一家集产品开发与销售为一体的大型民营企业，主要经营食用菌、南北干货、土特产品、炒货、海产品、有机食品等多个系列产品。公司自成立以来，始终坚定统一信念：时刻保证新鲜货源，增强一流服务意识，打造良好企业信誉，不懈追求客户满意。
+					网易严选，网易旗下原创生活类自营电商品牌，于2016年4月正式面世，是国内首家ODM（原始设计制造商）模式的电商，以“好的生活，没那么贵”为品牌理念。严选通过ODM模式与大牌制造商直连，剔除品牌溢价和中间环节，为国人甄选高品质、高性价比的天下优品。
 				</span>
 			</div>
 		</div>
@@ -144,8 +138,8 @@
 				console.log("产品规格1:"+record_zq);
 				
 				//产品详情高度
-					var intro_jungu = $(".intro_jungu").offset().top;
-					console.log("产品详情2:"+intro_jungu);
+					var intro_bwh = $(".intro_bwh").offset().top;
+					console.log("产品详情2:"+intro_bwh);
 				
 				//品牌介绍高度
 					var intro_zq = $(".intro_zq").offset().top;
@@ -154,25 +148,25 @@
 				//测试高度				
 				$(window).scroll(function() {
 					console.log("产品规格"+record_zq);
-					console.log("产品详情"+intro_jungu);
+					console.log("产品详情"+intro_bwh);
 					console.log("品牌介绍"+intro_zq);
 				
 					var this_scrollTop = $(this).scrollTop();
 					console.log("滚动条范围"+this_scrollTop);
 				
 					//产品规格1（record_zq）:416
-					//产品详情2（intro_jungu）:1324.65625
+					//产品详情2（intro_bwh）:1324.65625
 					//品牌介绍3（intro_zq）:3281.90625
 					
 					if(this_scrollTop >= 250.09375) {
 						
-						if(this_scrollTop > record_zq*0.8 && this_scrollTop < intro_jungu *0.9) {
+						if(this_scrollTop > record_zq*0.8 && this_scrollTop < intro_bwh *0.9) {
 							$(".go1").addClass("col_red");
 							$(".go2").removeClass("col_red");
 							$(".go3").removeClass("col_red");
 							
 							
-						} if( intro_jungu*0.9 <= this_scrollTop && this_scrollTop <=intro_zq*0.8){
+						} if( intro_bwh*0.9 <= this_scrollTop && this_scrollTop <=intro_zq*0.8){
 							$(".go1").removeClass("col_red");
 							$(".go3").removeClass("col_red");
 							$(".go2").addClass("col_red");
