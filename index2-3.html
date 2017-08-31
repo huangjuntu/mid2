@@ -15,7 +15,6 @@
 			
 			/*文中局部公共样式*/
 			.i_strong{font-weight: bold;}
-			.bag_zq span{color: #6C6B6B;}
 			
 			/*banner的背景*/
 			#content{width: auto;height: 100%;margin: 0 auto;padding: 0 1rem;}
@@ -26,10 +25,7 @@
             .title_ti2 span{color: #FFFFFF;font-size: 0.92rem;display: block;margin: 0 auto;height: 6rem;line-height: 6rem;text-align: center;}
 			
 			/*图片样式*/
-			.img_bg{width: 100%;height: auto;margin-bottom: 2rem;border-radius: 10px;overflow: hidden;border: 1px solid #DADADA;}
-			
-			/*商品文字信息介绍*/
-			.text_intro{background: rgb(241, 241, 241) url(__PUBLIC__/img/quot.jpg) no-repeat 1% 0.31rem;color: #6C6B6B;margin: 10px 0px;padding: 0.93rem 1.25rem 0.93rem 2.81rem;font-size: 0.87rem;line-height: 1.39rem;outline: 0px;border: 0px currentcolor;vertical-align: baseline;}
+			.img_bg{box-sizing: border-box;width: 100%;height: auto;margin-bottom: 2rem;border-radius: 10px;overflow: hidden;border: 1px solid #DADADA;}
 			
 			/*品鉴记录与规格*/
 			.record_zq{padding-right: 0.31rem;padding-left: 0.31rem;border: 1px solid rgb(252, 180, 43);line-height: 0.62rem;margin: 3rem 0 2rem 0;}
@@ -43,10 +39,6 @@
 			.record_zq_con ul li{font-size: 0.875rem;line-height: 1.1875rem;margin: 0.8rem 0;color: #6C6B6B;}
 		    .record_zq_con ul li .cat{font-weight: bold;}
 		    .record_zq_con h4{font-weight: normal;color: #6C6B6B;text-align: center;border-bottom: 1px dotted #FCB42B;}
-			
-			/*产品支持 产品包装 产品契机*/
-			.bag_zq{margin: 2rem 0rem;font-size: 0.87rem;padding: 0.93rem;border: 2px solid rgb(240, 240, 240);color: rgb(62, 62, 62);line-height: 1.5rem;box-shadow: rgb(170, 170, 170) 0px 0px 0.18rem;}
-			.bag_zq span{line-height: 1.5rem;}
 			
 			/*品牌介绍*/
 			.intro_zq{font-size: 0.87rem;color: #6C6B6B;margin: 2rem 0rem 2rem 0rem;padding: 2rem 1rem;border-left: 3px solid rgb(252, 180, 43);border-top-width: 3px;border-right-width: 3px;border-bottom-width: 3px;border-top-left-radius: 50px;border-bottom-right-radius: 50px;box-shadow: rgb(165, 165, 165) 5px 5px 2px 0px;background-color: rgb(250, 250, 250);}
@@ -65,9 +57,9 @@
 			#contact input,textarea{width: 90%;border: 1px solid #CCC;background: #FFF;margin: 0 0 0.4rem;padding: 0.5rem;}
 			#contact input[type="text"]:hover,#contact input[type="email"]:hover,#contact input[type="tel"]:hover,#contact input[type="url"]:hover,#contact textarea:hover{-webkit-transition: border-color 0.3s ease-in-out;-moz-transition: border-color 0.3s ease-in-out;transition: border-color 0.3s ease-in-out;border: 1px solid #AAA;}
 			#contact textarea{height: 100px;resize: none;width: 100%;box-sizing: border-box;}
-			#contact button[type="submit"]{cursor: pointer;width: 100%;border: none;background: #F9683D;color: #FFF;padding: 0.625rem;font-size: 0.9375rem;box-sizing: border-box;}
-			#contact button[type="submit"]:hover{background: #09C;-webkit-transition: background 0.3s ease-in-out;-moz-transition: background 0.3s ease-in-out;transition: background-color 0.3s ease-in-out;}
-			#contact button[type="submit"]:active{box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}
+			#contact button[type="button"]{cursor: pointer;width: 100%;border: none;background: #F9683D;color: #FFF;line-height: 2.5rem;height: 2.5rem;font-size: 0.9375rem;box-sizing: border-box;}
+			/*#contact button[type="submit"]:hover{background: #09C;-webkit-transition: background 0.3s ease-in-out;-moz-transition: background 0.3s ease-in-out;transition: background-color 0.3s ease-in-out;}
+			#contact button[type="submit"]:active{box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}*/
 			#contact input:focus,#contact textarea:focus{outline: 0;border: 1px solid #999;}
 			#contact .leftname{display: block;float: left;width: 20%;height: 1.875rem;line-height: 1.875rem;text-align: center;border: 1px solid #dedede;border-right: none;border-bottom-left-radius: 0.3125rem;border-top-left-radius: 0.3125rem;background-color: #dedede;box-sizing: border-box;}
 			#contact .rightinput{display: block;/*float: right;*/width: 80%;height: 1.875rem;line-height: 1.875rem;box-sizing: border-box;}
@@ -83,18 +75,13 @@
 			/*补充layer的样式*/
 			.layui-m-layer1 .layui-m-layerchild{border: none;border-radius: 0;border-radius: 10px;min-width: 20rem;max-width: 35rem;}
 
-			/*配送范围*/
-			.rang{width: 100%;padding: 0.9375rem;background: #F1F1F1;line-height: 1.875rem;font-size: 0.875rem;box-sizing: border-box;border-left: 0.3125rem solid #0099CC;margin-bottom: 1.25rem;}
-			
 			/*兑换流程*/
 			.mov_exchange{margin-top: 2rem;}
 			.mov_exchange span{color: #6C6B6B;display: inline-block;margin: 0 0 1rem 0;line-height: 1.5rem;font-size: 0.875rem;}
 			
-			/*影院列表*/
+			/*下面的电影影院列表*/
 			.mov_list{margin: 0 0 5rem 0;}
 			.mov_list span{color: #6C6B6B;font-size: 0.875rem;line-height: 1.5rem;}
-			
-			/*下面的电影影院列表*/
 			.movie_tc{margin: 1rem 0;}
 			.movie_tc table{border-collapse: collapse;border-spacing: 0px;font-size: 0.8rem !important;width: 100%;}
 			.movie_tc .table1{border-left: 2px solid #F1F1F1;border-top: 2px solid #F1F1F1;}
@@ -138,7 +125,6 @@
 						您也可以为远在他乡的家人朋友订票，让他们在周末看上一场精彩的电影。
 						支持手机端选座功能，也支持微信查询等功能，足不出户动动手指即可。
 						另为您配备专属售后服务团队，为您解决线上线下的问题咨询
-
 					</span><br />
 					<span class="i_strong">【规 &nbsp;格】</span><br />
 					<span><h5>博影电影通票（电子券）4张  </h5> 
@@ -190,15 +176,14 @@
 			<div class="intro_zq">
 				<span class="i_strong">使用规则：</span><br/>
 				<span>
-					1） 本券仅限于在博影网上购买电影票时使用，本券可兑换2D/3D电影票；<br />
+					1） 本电影兑换券（以下简称“本券”）仅限于在博影网上购买电影票时使用，每券可兑换2D/3D电影票1张，本产品含4张电影兑换券。<br />
 					2） 本券不支持兑换4D/IMAX场次、2月14日情人节、12月24日平安夜、12月25日圣诞节、12月31日迎新夜、1月1日元旦等，及其他特殊的场次；<br />
 					3） 本券为一次性消费券，不记名、不挂失、不兑现、不找零，一经发出概不退换；<br />
-					4） 本券有效期至2018年12月31日；<br />
+					4） <font color="red">本券有效期至2018年12月31日</font>；<br />
 					5） 使用本券时，不可参与其他电影票相关促销活动，也不可与其他抵用券同时使用；<br />
 					6） 本券可使用影院按售票时约定为准，也可关注博影微信公众号“boyingsj” 或通过博影官网http://www.boyingsj.com/ 查询，下方影院列表仅供参考；<br />
 					7）如本券无法使用请联系博影客服热线：400-108-5665（周一到周日，早9点至晚21点）。<br />
-					8）此券最终解释权归博影所有。<br />
-
+					8）本券最终解释权归博影所有。<br />
 				</span>
 			</div>
 			<!--影院列表-->
@@ -348,7 +333,7 @@
 						<div class="iblock"><span class="leftname">邮件</span><input placeholder="请输入收货人邮箱" type="email" required class="rightinput"></div><div class="clear"></div>\
 						<div class="iblock"><span class="leftname">地址</span><input placeholder="请输入收货人地址" type="text" required class="rightinput"></div><div class="clear"></div>\
 						<textarea placeholder="留言~" required></textarea>\
-						<button name="submit" type="submit" id="contact-submit"><a href="last.html">我要兑换</a></button> \
+						<button name="doExchange" type="button" id="doExchange"><a href="last.html">我要兑换</a></button> \
 					</form>\
 				</div>'
 				});

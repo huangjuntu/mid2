@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+		<title>8-咏信洗衣凝珠</title>
+		<style>
+			/*全局公共样式*/input,button,select,textarea{outline: none;}
+			*{padding: 0px;margin: 0px;}
+			form,select,input,img{border: 0;margin: 0px;padding: 0px;vertical-align: middle;width: 100%;}
+			li{list-style: none;}
+			a{text-decoration: none;}
+			body,html{height: auto;margin: 0 auto;min-width: 20rem;max-width: 35rem;}
+			
+			/*文中局部公共样式*/
+			.i_strong{font-weight: bold;}
+			
+			/*banner的背景*/
+			#content{width: auto;height: 100%;margin: 0 auto;padding: 0 1rem;}
+			.banner_bg{background: url(__PUBLIC__/img/banner_top.jpg);height: 14rem;background-size: 100% 100%;width: 100%;margin-bottom: 1rem;}
+			
+			/*标题样式*/
+			.title_ti2{width: 100%;height: 6rem;background: pink;margin: 0rem auto;background: url(__PUBLIC__/img/title_bg.png) no-repeat;background-size: 100% 100%;}
+            .title_ti2 span{color: #FFFFFF;font-size: 0.92rem;display: block;margin: 0 auto;height: 6rem;line-height: 6rem;text-align: center;}
+			
+			/*图片样式*/
+			.img_bg{box-sizing: border-box;width: 100%;height: auto;margin-bottom: 2rem;border-radius: 10px;overflow: hidden;border: 1px solid #DADADA;}
+			
+			/*商品文字信息介绍*/
+			.text_intro{background: rgb(241, 241, 241) url(__PUBLIC__/img/quot.jpg) no-repeat 1% 0.31rem;color: #6C6B6B;margin: 10px 0px;padding: 0.93rem 1.25rem 0.93rem 2.81rem;font-size: 0.87rem;line-height: 1.39rem;outline: 0px;border: 0px currentcolor;vertical-align: baseline;}
+			
+			/*品鉴记录与规格*/
+			.record_zq{padding-right: 0.31rem;padding-left: 0.31rem;border: 1px solid rgb(252, 180, 43);line-height: 0.62rem;margin: 3rem 0 2rem 0;}
+			.record_zq_top_bg{margin-top: -0.5rem;margin-left: 8.75rem;width: 50%;height: 0.5rem;background-color: rgb(254, 254, 254);}
+			.record_zq_top_bg span{border-radius: 100%;width: 0.5rem;height: 0.5rem;display: inline-block;background-color: rgb(252, 180, 43);}
+			.record_zq_con{margin: 0.93rem;color: rgb(62, 62, 62);line-height: 2em;font-size: 0.87rem;}
+			.record_zq_con span{color: #6C6B6B}
+			.record_zq_bottom_bg{margin-bottom: -0.25rem;margin-left: 1.56rem;width: 65%;height: 0.62rem;text-align: right;background-color: rgb(254, 254, 254);}
+			.record_zq_bottom_bg span{margin-bottom: 1px;border-radius: 100%;width: 0.5rem;height: 0.5rem;display: inline-block;background-color: rgb(252, 180, 43);}
+			
+			/*品牌介绍*/
+			.intro_zq{font-size: 0.87rem;color: #6C6B6B;margin: 2rem 0rem 5rem 0rem;padding: 2rem 1rem;border-left: 3px solid rgb(252, 180, 43);border-top-width: 3px;border-right-width: 3px;border-bottom-width: 3px;border-top-left-radius: 50px;border-bottom-right-radius: 50px;box-shadow: rgb(165, 165, 165) 5px 5px 2px 0px;background-color: rgb(250, 250, 250);}
+			.intro_zq span{line-height: 1.5rem;}
+			
+			/*注意事项*/
+			.attent_thing{font-size: 0.87rem;color: #6C6B6B;}
+			.attent_thing span{line-height: 1.5rem;}
+			
+			/*按钮*/
+            .footer{width: 100%; height: 4rem; line-height: 4rem; background: white; position: fixed; bottom: 0; min-width: 20rem; max-width: 35rem;}
+			.footer span{color: #fff;font-weight: normal;display: block;margin: 0.5rem auto;width: 90%;text-align: center;height: 3rem;line-height: 3rem;border-radius: 1rem;border: 1px solid #d2a000;box-shadow: 0 1px 2px #fedd71 inset, 0 -1px 0 #a38b39 inset, 0 -2px 3px #fedd71 inset;background: -webkit-linear-gradient(top, #fece34, #d8a605);}
+			.footer span:active{border: 0px solid #ef4300;}
+			.footer span a{color: white;display: block;}
+			
+			/*表格*/
+			#contact input,textarea{font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;}
+			#contact{/*F9F9F9*//*background: #CCE8CF;*/margin: 0px auto;width: 90%;/*border-radius: 5%;*/}
+			#contact h4{color: #F96;display: block;font-size: 1.2rem;font-weight: bold;margin-bottom: 0.6rem;}
+			#contact input,textarea{width: 90%;border: 1px solid #CCC;background: #FFF;margin: 0 0 0.4rem;padding: 0.5rem;}
+			#contact input[type="text"]:hover,#contact input[type="email"]:hover,#contact input[type="tel"]:hover,#contact input[type="url"]:hover,#contact textarea:hover{-webkit-transition: border-color 0.3s ease-in-out;-moz-transition: border-color 0.3s ease-in-out;transition: border-color 0.3s ease-in-out;border: 1px solid #AAA;}
+			#contact textarea{height: 100px;resize: none;width: 100%;box-sizing: border-box;}
+			#contact button[type="button"]{cursor: pointer;width: 100%;border: none;background: #FF9966;color: #FFF;padding: 0.625rem;font-size: 0.9375rem;box-sizing: border-box;}
+			/*#contact button[type="submit"]:hover{background: #09C;-webkit-transition: background 0.3s ease-in-out;-moz-transition: background 0.3s ease-in-out;transition: background-color 0.3s ease-in-out;}
+			#contact button[type="submit"]:active{box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}*/
+			#contact input:focus,#contact textarea:focus{outline: 0;border: 1px solid #999;}
+			#contact .leftname{display: block;float: left;width: 20%;height: 1.875rem;line-height: 1.875rem;text-align: center;border: 1px solid #dedede;border-right: none;border-bottom-left-radius: 0.3125rem;border-top-left-radius: 0.3125rem;background-color: #dedede;box-sizing: border-box;}
+			#contact .rightinput{display: block;/*float: right;*/width: 80%;height: 1.875rem;line-height: 1.875rem;box-sizing: border-box;}
+			#contact .iblock{margin-bottom: 0.1875rem;}
+			.face{background: black;opacity: 0.6;z-index: 888;margin: 0 auto;width: 100%;height: 100%;position: fixed;top: 0;left: 0;padding-top: 20%;display: none;}
+			.info_form{padding-bottom: 2rem;z-index: 999;margin: 0 auto;width: 100%;height: 100%;top: 0;left: 0;}
+			.info_form a{color: white;}
+			/*新增*/
+			.go{width: calc(100% - 2rem);min-width: 20rem;max-width: 33rem;background: yellow;position: fixed;top: 0;background: white;height: 3rem;line-height: 3rem;border-bottom: 1px solid #D6D5D6;box-sizing: border-box;display: none;}
+			.go1,.go2,.go3{font-weight: bold;width: 23%;height: 2rem;line-height: 2rem;text-align: center;margin: 0.5rem 5%;font-size: 0.875rem;color: black;text-shadow: 1px 1px 1px #fff;border: 1px solid #dce1e6;box-sizing: border-box;box-shadow: 0 1px 2px #fff inset, 0 -1px 0 #a8abae inset;background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);letter-spacing: 2px;/* text-indent: 8px;*/}
+			.clear{clear: both}
+			.col_red{color: #D27912;}
+			
+			/*补充layer的样式*/
+			.layui-m-layer1 .layui-m-layerchild{border: none;border-radius: 0;border-radius: 10px;min-width: 20rem;max-width: 35rem;}
+		</style>
+	</head>
+
+	<body id="body">
+		<div class="banner_bg"> </div>
+		<div id="content">
+			<div class="go">
+				<a class="go1" href="#panel1" style="float: left;">产品规格</a>
+				<a class="go2" href="#panel2" style="float: left;">产品详情</a>
+				<a class="go3" href="#panel3" style="float: right;">品牌介绍</a>
+			</div>
+
+			<!--产品标题-->
+			<div class="title_ti2">
+				<span>日本进口 宝洁Bold 洗衣球凝珠6盒装</span>
+			</div>
+			
+			<!--品鉴记录与规格-->
+			<div id="panel1" class="panel"></div>
+			<div class="record_zq">
+				<div class="record_zq_top_bg"> <span></span> </div>
+				<div class="record_zq_con"> 
+					<span class="i_strong">【品鉴记录】</span><br /> 
+					<span>
+						宝洁日本进口 Bold 新一代洗衣球凝珠2倍浓缩，用量更省。只需一颗，无需剪破，遇水即溶，轻松除去顽固污渍，使衣物达到抗菌除臭，持久芳香深层洁净等功效。通过特有的香氛配方，在洁净的基础上，BOLD为衣物带来持久而令人愉悦的香味，让穿着者时刻散发迷人气质。BOLD呵护衣物更呵护您。
+					</span><br />
+					<span class="i_strong">【规 &nbsp;格】</span><br /><br />
+					<span>
+						粉色花果香型（含柔顺剂） <br />
+						浅蓝百合香型（含柔顺剂） <br />
+						蓝色清新抗菌（除臭洁净）<br />
+						绿色除臭除菌（适合室内阴干）<br />
+					</span>
+				</div>
+				<div class="record_zq_bottom_bg"> <span></span> </div>
+			</div>
+			
+			<!--图片罗列-->
+			<div id="panel2" class="panel"></div>
+			<div class="img_bg intro_wash"> <img src="__PUBLIC__/img/8/8-detail.jpg" width="100%" height="100%"> </div>
+			
+			<!--注意事项-->
+			<div class="attent_thing">
+				<span class="i_strong"><font color="red">注意事项</font></span><br/>
+				<span>
+					1.	请勿放入洗剂料盒！以免堵塞出水口！<br />
+					2.	小球取出后不用剪开，直接投入洗衣机即可，遇水后外层的透明包装会自动溶解。 <br />
+					3.	取用啫喱洗衣球时，一定要保持手部干燥，如果手上有水，啫喱球遇水即化，造成不必要的浪费。<br />
+					4.	一定要放到婴幼儿碰触不到的地方保存，以免被误食。<br />
+				</span>
+			</div>
+			
+			<!--品牌介绍-->
+			<div id="panel3" class="panel"></div>
+			<div class="intro_zq">
+				<span class="i_strong">品牌介绍</span><br/>
+				<span>
+					&nbsp;&nbsp;Blod是全球日化龙头宝洁公司旗下著名洗涤品牌， 2002年Bold进入日本，为日本消费者带来了更加令人愉悦的洗涤体验。通过特有的香氛配方，在洁净的基础上，BOLD为衣物带来持久而令人愉悦的香味，让穿着者时刻散发迷人气质。作为日本家喻户晓的柔顺型洗衣产品，BOLD呵护衣物的同时，为消费者带来更加温和的舒适感受，呵护衣物更呵护你。。
+				</span>
+			</div>
+		</div>
+		
+		<!--按钮处-->
+		<div class="footer">
+			<span><a href="javascript:modalBottom();">点击兑换</a></span>
+		</div>
+		<div class="face" id="face"></div>
+		<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+		<script type="text/javascript" src="http://cdn.huangjuntu.vip/js/layer3.0.3/mobile/layer.js"></script>
+		<script>
+//			下滑动一定距离时出现锚点
+			$(function() {
+				//产品规格高度
+				var record_zq = $(".record_zq").offset().top;
+				console.log("产品规格1:"+record_zq);
+				
+				//产品详情高度
+					var intro_wash = $(".intro_wash").offset().top;
+					console.log("产品详情2:"+intro_wash);
+				
+				//品牌介绍高度
+					var intro_zq = $(".intro_zq").offset().top;
+					console.log("品牌介绍3:"+intro_zq);	
+				
+				//测试高度				
+				$(window).scroll(function() {
+					console.log("产品规格"+record_zq);
+					console.log("产品详情"+intro_wash);
+					console.log("品牌介绍"+intro_zq);
+				
+					var this_scrollTop = $(this).scrollTop();
+					console.log("滚动条范围"+this_scrollTop);
+				
+					//产品规格1（record_zq）:416
+					//产品详情2（intro_wash）:1324.65625
+					//品牌介绍3（intro_zq）:3281.90625
+					
+					if(this_scrollTop >= 250.09375) {
+						
+						if(this_scrollTop > record_zq*0.9 && this_scrollTop < intro_wash *0.9) {
+							$(".go1").addClass("col_red");
+							$(".go2").removeClass("col_red");
+							$(".go3").removeClass("col_red");
+							
+							
+						} if( intro_wash*0.9 <= this_scrollTop && this_scrollTop <=intro_zq*0.8){
+							$(".go1").removeClass("col_red");
+							$(".go3").removeClass("col_red");
+							$(".go2").addClass("col_red");
+							
+						}if( intro_zq*0.8 < this_scrollTop){
+							$(".go2").removeClass("col_red");
+							$(".go1").removeClass("col_red");
+							$(".go3").addClass("col_red");
+						}
+						$(".go").show();
+					} else {
+						$(".go").hide();
+					}
+				});
+			});
+			
+			
+			
+//			兑换点击按钮
+			function modalBottom() {
+				layer.open({
+					type: 1,
+					title: "请填入兑换信息",
+					closeBtn: 0,
+					shadeClose: true,//点击遮罩关闭
+					skin: 'yourclass',
+					content: '<div class="info_form" id="info_form">\
+					<form id="contact" action="" method="post">\
+						<div class="iblock"><span class="leftname">姓名</span><input placeholder="请输入收货人姓名" type="text" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">电话</span><input placeholder="请输入收货人电话" type="tel" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">邮件</span><input placeholder="请输入收货人邮箱" type="email" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">地址</span><input placeholder="请输入收货人地址" type="text" required class="rightinput"></div><div class="clear"></div>\
+						<textarea placeholder="留言~" required></textarea>\
+						<button name="doExchange" type="button" id="doExchange"><a href="last.html">我要兑换</a></button> \
+					</form>\
+				</div>'
+				});
+				
+
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

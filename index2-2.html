@@ -15,7 +15,6 @@
 			
 			/*文中局部公共样式*/
 			.i_strong{font-weight: bold;}
-			.bag_zq span{color: #6C6B6B;}
 			
 			/*banner的背景*/
 			#content{width: auto;height: 100%;margin: 0 auto;padding: 0 1rem;}
@@ -44,10 +43,6 @@
 		    .record_zq_con ul li .cat{font-weight: bold;}
 		    .record_zq_con h4{font-weight: normal;color: #6C6B6B;text-align: center;border-bottom: 1px dotted #FCB42B;}
 			
-			/*产品支持 产品包装 产品契机*/
-			.bag_zq{margin: 2rem 0rem;font-size: 0.87rem;padding: 0.93rem;border: 2px solid rgb(240, 240, 240);color: rgb(62, 62, 62);line-height: 1.5rem;box-shadow: rgb(170, 170, 170) 0px 0px 0.18rem;}
-			.bag_zq span{line-height: 1.5rem;}
-			
 			/*品牌介绍*/
 			.intro_zq{font-size: 0.87rem;color: #6C6B6B;margin: 2rem 0rem 5rem 0rem;padding: 2rem 1rem;border-left: 3px solid rgb(252, 180, 43);border-top-width: 3px;border-right-width: 3px;border-bottom-width: 3px;border-top-left-radius: 50px;border-bottom-right-radius: 50px;box-shadow: rgb(165, 165, 165) 5px 5px 2px 0px;background-color: rgb(250, 250, 250);}
 			.intro_zq span{line-height: 1.5rem;}
@@ -65,9 +60,9 @@
 			#contact input,textarea{width: 90%;border: 1px solid #CCC;background: #FFF;margin: 0 0 0.4rem;padding: 0.5rem;}
 			#contact input[type="text"]:hover,#contact input[type="email"]:hover,#contact input[type="tel"]:hover,#contact input[type="url"]:hover,#contact textarea:hover{-webkit-transition: border-color 0.3s ease-in-out;-moz-transition: border-color 0.3s ease-in-out;transition: border-color 0.3s ease-in-out;border: 1px solid #AAA;}
 			#contact textarea{height: 100px;resize: none;width: 100%;box-sizing: border-box;}
-			#contact button[type="submit"]{cursor: pointer;width: 100%;border: none;background: #F9683D;color: #FFF;padding: 0.625rem;font-size: 0.9375rem;box-sizing: border-box;}
-			#contact button[type="submit"]:hover{background: #09C;-webkit-transition: background 0.3s ease-in-out;-moz-transition: background 0.3s ease-in-out;transition: background-color 0.3s ease-in-out;}
-			#contact button[type="submit"]:active{box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}
+			#contact button[type="button"]{cursor: pointer;width: 100%;border: none;background: #F9683D;color: #FFF;line-height: 2.5rem;height: 2.5rem;font-size: 0.9375rem;box-sizing: border-box;}
+			/*#contact button[type="submit"]:hover{background: #09C;-webkit-transition: background 0.3s ease-in-out;-moz-transition: background 0.3s ease-in-out;transition: background-color 0.3s ease-in-out;}
+			#contact button[type="submit"]:active{box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}*/
 			#contact input:focus,#contact textarea:focus{outline: 0;border: 1px solid #999;}
 			#contact .leftname{display: block;float: left;width: 20%;height: 1.875rem;line-height: 1.875rem;text-align: center;border: 1px solid #dedede;border-right: none;border-bottom-left-radius: 0.3125rem;border-top-left-radius: 0.3125rem;background-color: #dedede;box-sizing: border-box;}
 			#contact .rightinput{display: block;/*float: right;*/width: 80%;height: 1.875rem;line-height: 1.875rem;box-sizing: border-box;}
@@ -318,7 +313,7 @@
 						<div class="iblock"><span class="leftname">邮件</span><input placeholder="请输入收货人邮箱" type="email" required class="rightinput"></div><div class="clear"></div>\
 						<div class="iblock"><span class="leftname">地址</span><input placeholder="请输入收货人地址" type="text" required class="rightinput"></div><div class="clear"></div>\
 						<textarea placeholder="留言~" required></textarea>\
-						<button name="submit" type="submit" id="contact-submit"><a href="last.html">我要兑换</a></button> \
+						<button name="doExchange" type="button" id="doExchange"><a href="last.html">我要兑换</a></button> \
 					</form>\
 				</div>'
 				});

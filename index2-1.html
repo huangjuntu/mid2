@@ -61,9 +61,9 @@
 			#contact input,textarea{width: 90%;border: 1px solid #CCC;background: #FFF;margin: 0 0 0.4rem;padding: 0.5rem;}
 			#contact input[type="text"]:hover,#contact input[type="email"]:hover,#contact input[type="tel"]:hover,#contact input[type="url"]:hover,#contact textarea:hover{-webkit-transition: border-color 0.3s ease-in-out;-moz-transition: border-color 0.3s ease-in-out;transition: border-color 0.3s ease-in-out;border: 1px solid #AAA;}
 			#contact textarea{height: 100px;resize: none;width: 100%;box-sizing: border-box;}
-			#contact button[type="submit"]{cursor: pointer;width: 100%;border: none;background: #FF9966;color: #FFF;padding: 0.625rem;font-size: 0.9375rem;box-sizing: border-box;}
-			#contact button[type="submit"]:hover{background: #09C;-webkit-transition: background 0.3s ease-in-out;-moz-transition: background 0.3s ease-in-out;transition: background-color 0.3s ease-in-out;}
-			#contact button[type="submit"]:active{box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}
+			#contact button[type="button"]{cursor: pointer;width: 100%;border: none;background: #FF9966;color: #FFF;line-height: 2.5rem;height: 2.5rem;font-size: 0.9375rem;box-sizing: border-box;}
+			/*#contact button[type="submit"]:hover{background: #09C;-webkit-transition: background 0.3s ease-in-out;-moz-transition: background 0.3s ease-in-out;transition: background-color 0.3s ease-in-out;}
+			#contact button[type="submit"]:active{box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}*/
 			#contact input:focus,#contact textarea:focus{outline: 0;border: 1px solid #999;}
 			#contact .leftname{display: block;float: left;width: 20%;height: 1.875rem;line-height: 1.875rem;text-align: center;border: 1px solid #dedede;border-right: none;border-bottom-left-radius: 0.3125rem;border-top-left-radius: 0.3125rem;background-color: #dedede;box-sizing: border-box;}
 			#contact .rightinput{display: block;/*float: right;*/width: 80%;height: 1.875rem;line-height: 1.875rem;box-sizing: border-box;}
@@ -76,6 +76,7 @@
 			.go1,.go2,.go3{font-weight: bold;width: 23%;height: 2rem;line-height: 2rem;text-align: center;margin: 0.5rem 5%;font-size: 0.875rem;color: black;text-shadow: 1px 1px 1px #fff;border: 1px solid #dce1e6;box-sizing: border-box;box-shadow: 0 1px 2px #fff inset, 0 -1px 0 #a8abae inset;background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);letter-spacing: 2px;/* text-indent: 8px;*/}
 			.clear{clear: both}
 			.col_red{color: #D27912;}
+			
 			
 			/*补充layer的样式*/
 			.layui-m-layer1 .layui-m-layerchild{border: none;border-radius: 0;border-radius: 10px;min-width: 20rem;max-width: 35rem;}
@@ -103,11 +104,10 @@
 				<div class="record_zq_con"> 
 					<span class="i_strong">【品鉴记录】</span><br /> 
 					<span>
-						回味的流心奶黄，浓厚的原味奶黄，由内而外的甘香幼滑，构成一份细腻的心思，叫人一尝再尝，从心回味。
-						诺心诚意奉上中秋莹月月饼礼盒，让您品尝中秋佳节滋味，缔造年度相聚时刻。
+						回味的流心奶黄，浓厚的原味奶黄，由内而外的甘香幼滑，构成一份细腻的心思，叫人一尝再尝，从心回味。诺心诚意奉上中秋莹月月饼礼盒，让您品尝中秋佳节滋味，缔造年度相聚时刻。
 					</span><br />
 					<span class="i_strong">【规 &nbsp;格】</span><br />
-					<span style="white-space: pre-wrap;">金沙奶黄月饼（3个）、流心奶黄月饼（3个）</span>
+					<span style="white-space: pre-wrap;">金沙奶黄月饼（3个）、流心奶黄月饼（3个）<br/>保质期：60天</span>
 				</div>
 				<div class="record_zq_bottom_bg"> <span></span> </div>
 			</div>
@@ -137,7 +137,7 @@
 			<div class="bag_zq"> <span class="i_strong">【产品支持】</span>
 				<span>由最专业的米其林三星厨师技巧呈现以上产品优势</span><br/>
 				<span class="i_strong">【产品包装】</span>
-				<span> 极具中国风的装载工具，采用月宫玉兔与星月的主题元素，以兔妈妈与兔宝宝嬉戏为线索，勾勒出天伦之乐的情景。</span>
+				<span>极具中国风的装载工具，采用月宫玉兔与星月的主题元素，以兔妈妈与兔宝宝嬉戏为线索，勾勒出天伦之乐的情景。</span>
 				<span>内置LED灯光，点亮流光溢彩，可作为孩子的手伴，童趣盎然，其乐融融。</span><br/>
 				<span class="i_strong">【产品契机】</span>
 				<span>在重复发放各种广式月饼的前提下，想换品牌无奈没有寻找可信度，美誉度足够的品牌，这次可以选诺心。</span>
@@ -238,7 +238,7 @@
 						<div class="iblock"><span class="leftname">邮件</span><input placeholder="请输入收货人邮箱" type="email" required class="rightinput"></div><div class="clear"></div>\
 						<div class="iblock"><span class="leftname">地址</span><input placeholder="请输入收货人地址" type="text" required class="rightinput"></div><div class="clear"></div>\
 						<textarea placeholder="留言~" required></textarea>\
-						<button name="submit" type="submit" id="contact-submit" ><a href="last.html">我要兑换</a></button> \
+						<button name="doExchange" type="button" id="doExchange"><a href="last.html">我要兑换</a></button> \
 					</form>\
 				</div>'
 				});

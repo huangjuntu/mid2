@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+		<title>6-如此花草水花漾礼盒</title>
+		<style>
+			/*全局公共样式*/input,button,select,textarea{outline: none;}
+			*{padding: 0px;margin: 0px;}
+			form,select,input,img{border: 0;margin: 0px;padding: 0px;vertical-align: middle;width: 100%;}
+			li{list-style: none;}
+			a{text-decoration: none;}
+			body,html{height: auto;margin: 0 auto;min-width: 20rem;max-width: 35rem;}
+			
+			/*文中局部公共样式*/
+			.i_strong{font-weight: bold;}
+			
+			/*banner的背景*/
+			#content{width: auto;height: 100%;margin: 0 auto;padding: 0 1rem;}
+			.banner_bg{background: url(__PUBLIC__/img/banner_top.jpg);height: 14rem;background-size: 100% 100%;width: 100%;margin-bottom: 1rem;}
+			
+			/*标题样式*/
+			.title_ti2{width: 100%;height: 6rem;background: pink;margin: 0rem auto;background: url(__PUBLIC__/img/title_bg.png) no-repeat;background-size: 100% 100%;}
+            .title_ti2 span{color: #FFFFFF;font-size: 0.92rem;display: block;margin: 0 auto;height: 6rem;line-height: 6rem;text-align: center;}
+			
+			/*图片样式*/
+			.img_bg{box-sizing: border-box;width: 100%;height: auto;margin-bottom: 2rem;border-radius: 10px;overflow: hidden;border: 1px solid #DADADA;}
+			
+			/*商品文字信息介绍*/
+			.text_intro{background: rgb(241, 241, 241) url(__PUBLIC__/img/quot.jpg) no-repeat 1% 0.31rem;color: #6C6B6B;margin: 10px 0px;padding: 0.93rem 1.25rem 0.93rem 2.81rem;font-size: 0.87rem;line-height: 1.39rem;outline: 0px;border: 0px currentcolor;vertical-align: baseline;}
+			
+			/*品鉴记录与规格*/
+			.record_zq{padding-right: 0.31rem;padding-left: 0.31rem;border: 1px solid rgb(252, 180, 43);line-height: 0.62rem;margin: 3rem 0 2rem 0;}
+			.record_zq_top_bg{margin-top: -0.5rem;margin-left: 8.75rem;width: 50%;height: 0.5rem;background-color: rgb(254, 254, 254);}
+			.record_zq_top_bg span{border-radius: 100%;width: 0.5rem;height: 0.5rem;display: inline-block;background-color: rgb(252, 180, 43);}
+			.record_zq_con{margin: 0.93rem;color: rgb(62, 62, 62);line-height: 2em;font-size: 0.87rem;}
+			.record_zq_con span{color: #6C6B6B}
+			.record_zq_bottom_bg{margin-bottom: -0.25rem;margin-left: 1.56rem;width: 65%;height: 0.62rem;text-align: right;background-color: rgb(254, 254, 254);}
+			.record_zq_bottom_bg span{margin-bottom: 1px;border-radius: 100%;width: 0.5rem;height: 0.5rem;display: inline-block;background-color: rgb(252, 180, 43);}
+			
+			/*品牌介绍*/
+			.intro_zq{font-size: 0.87rem;color: #6C6B6B;margin: 2rem 0rem 5rem 0rem;padding: 2rem 1rem;border-left: 3px solid rgb(252, 180, 43);border-top-width: 3px;border-right-width: 3px;border-bottom-width: 3px;border-top-left-radius: 50px;border-bottom-right-radius: 50px;box-shadow: rgb(165, 165, 165) 5px 5px 2px 0px;background-color: rgb(250, 250, 250);}
+			.intro_zq span{line-height: 1.5rem;}
+			
+			/*按钮*/
+            .footer{width: 100%; height: 4rem; line-height: 4rem; background: white; position: fixed; bottom: 0; min-width: 20rem; max-width: 35rem;}
+			.footer span{color: #fff;font-weight: normal;display: block;margin: 0.5rem auto;width: 90%;text-align: center;height: 3rem;line-height: 3rem;border-radius: 1rem;border: 1px solid #d2a000;box-shadow: 0 1px 2px #fedd71 inset, 0 -1px 0 #a38b39 inset, 0 -2px 3px #fedd71 inset;background: -webkit-linear-gradient(top, #fece34, #d8a605);}
+			.footer span:active{border: 0px solid #ef4300;}
+			.footer span a{color: white;display: block;}
+			
+			/*表格*/
+			#contact input,textarea{font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;}
+			#contact{/*F9F9F9*//*background: #CCE8CF;*/margin: 0px auto;width: 90%;/*border-radius: 5%;*/}
+			#contact h4{color: #F96;display: block;font-size: 1.2rem;font-weight: bold;margin-bottom: 0.6rem;}
+			#contact input,textarea{width: 90%;border: 1px solid #CCC;background: #FFF;margin: 0 0 0.4rem;padding: 0.5rem;}
+			#contact input[type="text"]:hover,#contact input[type="email"]:hover,#contact input[type="tel"]:hover,#contact input[type="url"]:hover,#contact textarea:hover{-webkit-transition: border-color 0.3s ease-in-out;-moz-transition: border-color 0.3s ease-in-out;transition: border-color 0.3s ease-in-out;border: 1px solid #AAA;}
+			#contact textarea{height: 100px;resize: none;width: 100%;box-sizing: border-box;}
+			#contact button[type="button"]{cursor: pointer;width: 100%;border: none;background: #FF9966;color: #FFF;padding: 0.625rem;font-size: 0.9375rem;box-sizing: border-box;}
+			/*#contact button[type="submit"]:hover{background: #09C;-webkit-transition: background 0.3s ease-in-out;-moz-transition: background 0.3s ease-in-out;transition: background-color 0.3s ease-in-out;}
+			#contact button[type="submit"]:active{box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}*/
+			#contact input:focus,#contact textarea:focus{outline: 0;border: 1px solid #999;}
+			#contact .leftname{display: block;float: left;width: 20%;height: 1.875rem;line-height: 1.875rem;text-align: center;border: 1px solid #dedede;border-right: none;border-bottom-left-radius: 0.3125rem;border-top-left-radius: 0.3125rem;background-color: #dedede;box-sizing: border-box;}
+			#contact .rightinput{display: block;/*float: right;*/width: 80%;height: 1.875rem;line-height: 1.875rem;box-sizing: border-box;}
+			#contact .iblock{margin-bottom: 0.1875rem;}
+			.face{background: black;opacity: 0.6;z-index: 888;margin: 0 auto;width: 100%;height: 100%;position: fixed;top: 0;left: 0;padding-top: 20%;display: none;}
+			.info_form{padding-bottom: 2rem;z-index: 999;margin: 0 auto;width: 100%;height: 100%;top: 0;left: 0;}
+			.info_form a{color: white;}
+			/*新增*/
+			.go{width: calc(100% - 2rem);min-width: 20rem;max-width: 33rem;background: yellow;position: fixed;top: 0;background: white;height: 3rem;line-height: 3rem;border-bottom: 1px solid #D6D5D6;box-sizing: border-box;display: none;}
+			.go1,.go2,.go3{font-weight: bold;width: 23%;height: 2rem;line-height: 2rem;text-align: center;margin: 0.5rem 5%;font-size: 0.875rem;color: black;text-shadow: 1px 1px 1px #fff;border: 1px solid #dce1e6;box-sizing: border-box;box-shadow: 0 1px 2px #fff inset, 0 -1px 0 #a8abae inset;background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);letter-spacing: 2px;/* text-indent: 8px;*/}
+			.clear{clear: both}
+			.col_red{color: #D27912;}
+			
+			/*补充layer的样式*/
+			.layui-m-layer1 .layui-m-layerchild{border: none;border-radius: 0;border-radius: 10px;min-width: 20rem;max-width: 35rem;}
+		</style>
+	</head>
+
+	<body id="body">
+		<div class="banner_bg"> </div>
+		<div id="content">
+			<div class="go">
+				<a class="go1" href="#panel1" style="float: left;">产品规格</a>
+				<a class="go2" href="#panel2" style="float: left;">产品详情</a>
+				<a class="go3" href="#panel3" style="float: right;">品牌介绍</a>
+			</div>
+
+			<!--产品标题-->
+			<div class="title_ti2">
+				<span>如此花草水- 花漾礼盒 Blossom</span>
+			</div>
+			
+			<!--品鉴记录与规格-->
+			<div id="panel1" class="panel"></div>
+			<div class="record_zq">
+				<div class="record_zq_top_bg"> <span></span> </div>
+				<div class="record_zq_con"> 
+					<span class="i_strong">【品鉴记录】</span><br /> 
+					<span>
+						【如此花草水】最新推出秋日特别版礼盒—花漾礼盒，与无添加护肤品牌【初之印】联名，带来多重缤纷好礼。
+						花漾礼盒设计的初衷，即是契合秋日花果皆繁盛的意境，将花草插画，花草水，花草护肤用心装入礼盒，送礼自
+						用皆宜。16片如此花草水搭配清新风格如此冷泡瓶，让喝水，成为随时随地，拥有乐趣的事情，在秋日里滋润身
+						心。初之印护肤系列精选了面膜，护手霜，手工皂，也贴心地为秋日干燥的肌肤，带去滋润和美丽。
+					</span><br />
+					<span class="i_strong">【规 &nbsp;格】</span><br />
+					<span>
+						1.	Roots Water如此花草水－8款口味组合花草茶袋冷泡茶16包<br />
+							&nbsp;&nbsp;蒲公英石榴枸杞 *2包 <br />
+							&nbsp;&nbsp;柠檬香橙草莓 *2包<br />
+							&nbsp;&nbsp;金银花柠檬生姜*2包<br />
+							&nbsp;&nbsp;无花果桑葚决明子*2包<br />
+							&nbsp;&nbsp;玫瑰菊花薄荷*2包<br />
+							&nbsp;&nbsp;桂圆红枣枸杞*2包<br />
+							&nbsp;&nbsp;胎菊苹果红茶*2包<br />
+							&nbsp;&nbsp;桂花红豆薏仁*2包<br />
+							&nbsp;&nbsp;（保质期：24个月）<br />
+						2.	Roots Water冷泡瓶*1个<br />
+						3.	初之印-海藻芦荟保湿手工皂1块：100g<br />
+						4.	初之印-润颜初嫩面膜5片：125ml(25ml*5片)<br />
+						5.	初之印-柠檬滋润柔嫩护手霜1支：30g<br />
+					</span>
+				</div>
+				<div class="record_zq_bottom_bg"> <span></span> </div>
+			</div>
+			
+			<!--图片罗列-->
+			<!--<div class="img_bg"> <img src="__PUBLIC__/img/1-1.jpg" width="100%" height="100%"> </div>
+			<div class="img_bg"> <img src="__PUBLIC__/img/1-2.jpg" width="100%" height="100%"> </div>
+			<div class="img_bg"> <img src="__PUBLIC__/img/1-3.jpg" width="100%" height="100%"> </div>-->
+			<div id="panel2" class="panel"></div>
+			
+			<!--商品详情介绍-->
+			<div class="text_intro intro_first"> <span class="i_strong">Roots Water如此花草水－8款口味组合花草茶袋冷泡茶16包</span><br />
+				<span>由如此花草师精心调配而成，采用天然原料，不添加香精和甜味剂，呈现自然原本的味道，每款都有独特的口味。茶包上每天不同的“花草签”，或犀利，或暖心，分享你生活里的“小确幸”。</span><br/>
+				<span>
+					蒲公英石榴枸杞：焕新身体 提高颜值<br />
+					柠檬香橙草莓：酸甜爽口 补充维C<br />
+					金银花柠檬生姜：提神醒脑 满血复活<br />
+					无花果桑葚决明子：清润舒畅 气质担当<br />
+					玫瑰菊花薄荷：宁神静心 赶走焦虑<br />
+					桂圆红枣枸杞：补气暖身 香甜温润<br />
+					胎菊苹果红茶：香醇回甘 润燥清火<br />
+					桂花红豆薏仁：香气怡人 舒心祛湿<br />
+				</span>
+			</div>
+			<!--<div class="img_bg"> <img src="__PUBLIC__/img/1-7.jpg" width="100%" height="100%"> </div>-->
+			<!--<div class="img_bg"> <img src="__PUBLIC__/img/1-8.jpg" width="100%" height="100%"> </div>-->
+			<div class="text_intro">
+				<span class="i_strong">Roots Water 如此冷泡瓶</span><br />
+				<span>
+					由如此设计师倾情打造便携式冷泡瓶，高品质耐热玻璃 ，装热水也没问题，饮茶更安心；造型灵巧方便，补水更方便；大口径瓶口，轻松畅饮，刷洗无忧。
+				</span><br/>
+			</div>
+			<div class="text_intro">
+				<span class="i_strong">初之印－润颜初嫩面膜25ml*5片</span><br />
+				<span>
+					蜜桔柔嫩透润：蕴含蜜桔萃取，帮助打造散发健康光彩的透润肌肤。<br/>
+					猕猴桃活力营养：蕴含猕猴桃萃取，由内而外滋润营养，打造活力肌肤。<br/>
+					葡萄柚嫩肤赋活：蕴含葡萄柚萃取，调理舒缓肌肤，嫩滑肌肤，改善外观。<br/>
+					椰子清爽水嫩：蕴含椰子萃取，增加皮肤含水量，清爽柔润。<br/>
+					大豆弹力蛋白：蕴含大豆萃取，帮助打造弹润水嫩肌肤，提升肌肤通透度。<br/>
+
+				</span><br/>
+			</div>
+			<div class="text_intro">
+				<span class="i_strong">初之印－柠檬滋润柔嫩护手霜</span><br />
+				<span>
+					添加柠檬萃取物成分，吸收迅速，不油腻，长期使用可使手部肌肤光洁柔嫩。
+				</span><br/>
+			</div>
+			<div class="text_intro">
+				<span class="i_strong">初之印－海藻芦荟保湿手工皂</span><br />
+				<span>
+					添加海藻及芦荟保湿成分，提升肌肤保水能力，在清洁的同时帮助补充皮肤所流失的水分，长期使用让肌肤光泽更显亮丽。
+				</span><br/>
+			</div>
+			<!--<div class="img_bg" style="height: 19rem;"> <img src="__PUBLIC__/img/1-9.jpg" width="100%" height="100%"> </div>
+			<div class="img_bg"> <img src="__PUBLIC__/img/1-10.jpg" width="100%" height="100%"> </div>-->
+			
+			<!--<div class="img_bg"> <img src="__PUBLIC__/img/1-5.jpg" width="100%" height="100%"> </div>
+			<div class="img_bg"> <img src="__PUBLIC__/img/1-6.jpg" width="100%" height="100%"> </div>-->
+			
+			<!--品牌介绍-->
+			<div id="panel3" class="panel"></div>
+			<div class="intro_zq">
+				<span class="i_strong">品牌介绍</span><br/>
+				<span>
+					&nbsp;&nbsp;如此：“如此Roots”是一个2016年在上海成立的消费品品牌，致力于打造一个“时髦、现代、艺术”的花
+					草概念的茶点品牌。目前发布了两条产品线，如此花草水 和 如此花草巧克力。“如此Roots”是一个消费品
+					中的设计师品牌，强调时髦而有冲击力的品牌视觉，希望创造一个直击当下年轻的生活方式品牌。<br />
+					&nbsp;&nbsp;初之印：创立于2015年的零添加自然美肤品牌初之印，秉承用的要和吃的一样安全的研发理念，用严谨创新的精神态度严格控制
+					产品的生产制程，自诞生以来一直致力于创造能够让女性消费群一见钟情的美肤产品。
+				</span>
+			</div>
+		</div>
+		
+		<!--按钮处-->
+		<div class="footer">
+			<span><a href="javascript:modalBottom();">点击兑换</a></span>
+		</div>
+		<div class="face" id="face"></div>
+		<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+		<script type="text/javascript" src="http://cdn.huangjuntu.vip/js/layer3.0.3/mobile/layer.js"></script>
+		<script>
+//			下滑动一定距离时出现锚点
+			$(function() {
+				//产品规格高度
+				var record_zq = $(".record_zq").offset().top;
+				console.log("产品规格1:"+record_zq);
+				
+				//产品详情高度
+					var intro_first = $(".intro_first").offset().top;
+					console.log("产品详情2:"+intro_first);
+				
+				//品牌介绍高度
+					var intro_zq = $(".intro_zq").offset().top;
+					console.log("品牌介绍3:"+intro_zq);	
+				
+				//测试高度				
+				$(window).scroll(function() {
+					console.log("产品规格"+record_zq);
+					console.log("产品详情"+intro_first);
+					console.log("品牌介绍"+intro_zq);
+				
+					var this_scrollTop = $(this).scrollTop();
+					console.log("滚动条范围"+this_scrollTop);
+				
+					//产品规格1（record_zq）:416
+					//产品详情2（intro_first）:1324.65625
+					//品牌介绍3（intro_zq）:3281.90625
+					
+					if(this_scrollTop >= 250.09375) {
+						
+						if(this_scrollTop > record_zq*0.9 && this_scrollTop < intro_first *0.9) {
+							$(".go1").addClass("col_red");
+							$(".go2").removeClass("col_red");
+							$(".go3").removeClass("col_red");
+							
+							
+						} if( intro_first*0.9 <= this_scrollTop && this_scrollTop <=intro_zq*0.8){
+							$(".go1").removeClass("col_red");
+							$(".go3").removeClass("col_red");
+							$(".go2").addClass("col_red");
+							
+						}if( intro_zq*0.8 < this_scrollTop){
+							$(".go2").removeClass("col_red");
+							$(".go1").removeClass("col_red");
+							$(".go3").addClass("col_red");
+						}
+						$(".go").show();
+					} else {
+						$(".go").hide();
+					}
+				});
+			});
+			
+			
+			
+//			兑换点击按钮
+			function modalBottom() {
+				layer.open({
+					type: 1,
+					title: "请填入兑换信息",
+					closeBtn: 0,
+					shadeClose: true,//点击遮罩关闭
+					skin: 'yourclass',
+					content: '<div class="info_form" id="info_form">\
+					<form id="contact" action="" method="post">\
+						<div class="iblock"><span class="leftname">姓名</span><input placeholder="请输入收货人姓名" type="text" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">电话</span><input placeholder="请输入收货人电话" type="tel" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">邮件</span><input placeholder="请输入收货人邮箱" type="email" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">地址</span><input placeholder="请输入收货人地址" type="text" required class="rightinput"></div><div class="clear"></div>\
+						<textarea placeholder="留言~" required></textarea>\
+						<button name="doExchange" type="button" id="doExchange"><a href="last.html">我要兑换</a></button> \
+					</form>\
+				</div>'
+				});
+				
+
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>
