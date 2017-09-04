@@ -24,7 +24,7 @@
             
             /*标题样式*/
             .title_ti2{width: 100%;height: 6rem;background: pink;margin: 0rem auto;background: url(__PUBLIC__/img/title_bg.png) no-repeat;background-size: 100% 100%;}
-            .title_ti2 span{font-weight: bold;color: #FFFFFF;font-size: 1rem;display: block;margin: 0 auto;height: 6rem;line-height: 6rem;text-align: center;}
+            .title_ti2 span{letter-spacing:0.05em;font-weight: bold;color: #FFFFFF;font-size: 1rem;display: block;margin: 0 auto;height: 6rem;line-height: 6rem;text-align: center;}
             
             /*图片样式*/
 			.img_bg{box-sizing: border-box;width: 100%;height: auto;margin-bottom: 1rem;border-radius: 10px;overflow: hidden;border: 1px solid #DADADA;}
@@ -126,7 +126,11 @@
 			
 			.rang_tc .table2_con .table2 tr:last-child{border-bottom: 0;}
 			.rang_tc table td{height: 1rem;line-height: 1rem;padding: 0.5rem;color:#6C6B6B;}
-			.rang_tc table td:first-child{font-weight: bold;font-size: 0.9rem;color:#D87912;}       
+			.rang_tc table td:first-child{font-weight: bold;font-size: 0.9rem;color:#D87912;}     
+			
+			@media only screen and (min-width: 450px)  {
+		.banner_bg{background: url(__PUBLIC__/img/banner_top.jpg);height: 19rem;background-size: 100% 100%;width: 100%;margin-bottom: 1rem;}
+			}  
 			        
         
         </style>
