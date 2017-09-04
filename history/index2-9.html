@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+		<title>9-诺心果汁</title>
+		<style>
+			/*全局公共样式*/input,button,select,textarea{outline: none;}
+			*{padding: 0px;margin: 0px;}
+			form,select,input,img{border: 0;margin: 0px;padding: 0px;vertical-align: middle;width: 100%;}
+			li{list-style: none;}
+			a{text-decoration: none;}
+			body,html{height: auto;margin: 0 auto;min-width: 20rem;max-width: 35rem;}
+			
+			/*文中局部公共样式*/
+			.i_strong{font-weight: bold;}
+			
+			/*banner的背景*/
+			#content{width: auto;height: 100%;margin: 0 auto;padding: 0 1rem;}
+			.banner_bg{background: url(__PUBLIC__/img/banner_top.jpg);height: 14rem;background-size: 100% 100%;width: 100%;margin-bottom: 1rem;}
+			
+			/*标题样式*/
+			.title_ti2{width: 100%;height: 6rem;background: pink;margin: 0rem auto;background: url(__PUBLIC__/img/title_bg.png) no-repeat;background-size: 100% 100%;}
+            .title_ti2 span{color: #FFFFFF;font-size: 0.92rem;display: block;margin: 0 auto;height: 6rem;line-height: 6rem;text-align: center;}
+			
+			/*图片样式*/
+			.img_bg{box-sizing: border-box;width: 100%;height: auto;margin-bottom: 2rem;border-radius: 10px;overflow: hidden;border: 1px solid #DADADA;}
+			
+			/*品鉴记录与规格*/
+			.record_zq{padding-right: 0.31rem;padding-left: 0.31rem;border: 1px solid rgb(252, 180, 43);line-height: 0.62rem;margin: 3rem 0 2rem 0;}
+			.record_zq_top_bg{margin-top: -0.5rem;margin-left: 8.75rem;width: 50%;height: 0.5rem;background-color: rgb(254, 254, 254);}
+			.record_zq_top_bg span{border-radius: 100%;width: 0.5rem;height: 0.5rem;display: inline-block;background-color: rgb(252, 180, 43);}
+			.record_zq_con{margin: 0.93rem;color: rgb(62, 62, 62);line-height: 2em;font-size: 0.87rem;}
+			.record_zq_con span{color: #6C6B6B}
+			.record_zq_bottom_bg{margin-bottom: -0.25rem;margin-left: 1.56rem;width: 65%;height: 0.62rem;text-align: right;background-color: rgb(254, 254, 254);}
+			.record_zq_bottom_bg span{margin-bottom: 1px;border-radius: 100%;width: 0.5rem;height: 0.5rem;display: inline-block;background-color: rgb(252, 180, 43);}
+			
+			/*品牌介绍*/
+			.intro_zq{font-size: 0.87rem;color: #6C6B6B;margin: 2rem 0rem 5rem 0rem;padding: 2rem 1rem;border-left: 3px solid rgb(252, 180, 43);border-top-width: 3px;border-right-width: 3px;border-bottom-width: 3px;border-top-left-radius: 50px;border-bottom-right-radius: 50px;box-shadow: rgb(165, 165, 165) 5px 5px 2px 0px;background-color: rgb(250, 250, 250);}
+			.intro_zq span{line-height: 1.5rem;}
+			
+			/*按钮*/
+            .footer{width: 100%; height: 4rem; line-height: 4rem; background: white; position: fixed; bottom: 0; min-width: 20rem; max-width: 35rem;}
+			.footer span{color: #fff;font-weight: normal;display: block;margin: 0.5rem auto;width: 90%;text-align: center;height: 3rem;line-height: 3rem;border-radius: 1rem;border: 1px solid #d2a000;box-shadow: 0 1px 2px #fedd71 inset, 0 -1px 0 #a38b39 inset, 0 -2px 3px #fedd71 inset;background: -webkit-linear-gradient(top, #fece34, #d8a605);}
+			.footer span:active{border: 0px solid #ef4300;}
+			.footer span a{color: white;display: block;}
+			
+			/*表格*/
+			#contact input,textarea{font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;}
+			#contact{/*F9F9F9*//*background: #CCE8CF;*/margin: 0px auto;width: 90%;/*border-radius: 5%;*/}
+			#contact h4{color: #F96;display: block;font-size: 1.2rem;font-weight: bold;margin-bottom: 0.6rem;}
+			#contact input,textarea{width: 90%;border: 1px solid #CCC;background: #FFF;margin: 0 0 0.4rem;padding: 0.5rem;}
+			#contact input[type="text"]:hover,#contact input[type="email"]:hover,#contact input[type="tel"]:hover,#contact input[type="url"]:hover,#contact textarea:hover{-webkit-transition: border-color 0.3s ease-in-out;-moz-transition: border-color 0.3s ease-in-out;transition: border-color 0.3s ease-in-out;border: 1px solid #AAA;}
+			#contact textarea{height: 100px;resize: none;width: 100%;box-sizing: border-box;}
+			#contact button[type="button"]{cursor: pointer;width: 100%;border: none;background: #FF9966;color: #FFF;line-height: 2.5rem;height: 2.5rem;font-size: 0.9375rem;box-sizing: border-box;}
+			/*#contact button[type="submit"]:hover{background: #09C;-webkit-transition: background 0.3s ease-in-out;-moz-transition: background 0.3s ease-in-out;transition: background-color 0.3s ease-in-out;}
+			#contact button[type="submit"]:active{box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}*/
+			#contact input:focus,#contact textarea:focus{outline: 0;border: 1px solid #999;}
+			#contact .leftname{display: block;float: left;width: 20%;height: 1.875rem;line-height: 1.875rem;text-align: center;border: 1px solid #dedede;border-right: none;border-bottom-left-radius: 0.3125rem;border-top-left-radius: 0.3125rem;background-color: #dedede;box-sizing: border-box;}
+			#contact .rightinput{display: block;/*float: right;*/width: 80%;height: 1.875rem;line-height: 1.875rem;box-sizing: border-box;}
+			#contact .iblock{margin-bottom: 0.1875rem;}
+			.face{background: black;opacity: 0.6;z-index: 888;margin: 0 auto;width: 100%;height: 100%;position: fixed;top: 0;left: 0;padding-top: 20%;display: none;}
+			.info_form{padding-bottom: 2rem;z-index: 999;margin: 0 auto;width: 100%;height: 100%;top: 0;left: 0;}
+			.info_form a{color: white;}
+			/*新增*/
+			.go{width: calc(100% - 2rem);min-width: 20rem;max-width: 33rem;background: yellow;position: fixed;top: 0;background: white;height: 3rem;line-height: 3rem;border-bottom: 1px solid #D6D5D6;box-sizing: border-box;display: none;}
+			.go1,.go2,.go3{font-weight: bold;width: 23%;height: 2rem;line-height: 2rem;text-align: center;margin: 0.5rem 5%;font-size: 0.875rem;color: black;text-shadow: 1px 1px 1px #fff;border: 1px solid #dce1e6;box-sizing: border-box;box-shadow: 0 1px 2px #fff inset, 0 -1px 0 #a8abae inset;background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);letter-spacing: 2px;/* text-indent: 8px;*/}
+			.clear{clear: both}
+			.col_red{color: #D27912;}
+			
+			/*补充layer的样式*/
+			.layui-m-layer1 .layui-m-layerchild{border: none;border-radius: 0;border-radius: 10px;min-width: 20rem;max-width: 35rem;}
+		
+			/*配送范围*/
+			.rang_list{margin: 0 0 2rem 0;}
+			.rang_list span{color: #6C6B6B;font-size: 0.875rem;line-height: 1.5rem;}
+			.rang_tc{margin: 1rem 0;}
+			.rang_tc table{border-collapse: collapse;border-spacing: 0px;font-size: 0.8rem !important;width: 100%;}
+			.rang_tc .table1{border-left: 2px solid #F1F1F1;border-top: 2px solid #F1F1F1;}
+			.rang_tc .table1 th{border-right:1px solid #7FAF3F;border-bottom:1px solid #7FAF3F;}
+			.rang_tc .table2_con{overflow-y:scroll ;height: 20rem;border-left: 2px solid #F1F1F1;border-bottom: 2px solid #F1F1F1;}
+			.rang_tc .table2_con .table2 tr{border-bottom:1px solid #7FAF3F;}
+			.rang_tc .table2_con .table2 td{border-right:1px solid #7FAF3F;}
+			.rang_tc .table1 .bg_line{background: #DEDEDE;height: 2rem;line-height: 2rem;}	
+			.rang_tc .table1 .one{height: 2rem;line-height: 2rem;background: #7FAF3F;font-size: 1.2rem;color: white}
+			
+			.rang_tc .table2_con .table2 tr:last-child{border-bottom: 0;}
+			.rang_tc table td{height: 1rem;line-height: 1rem;padding: 0.5rem;color:#6C6B6B;}
+			.rang_tc table td:first-child{font-weight: bold;font-size: 0.9rem;color:#D87912;}
+			
+		
+		</style>
+	</head>
+
+	<body id="body">
+		<div class="banner_bg"> </div>
+		<div id="content">
+			<div class="go">
+				<a class="go1" href="#panel1" style="float: left;">产品规格</a>
+				<a class="go2" href="#panel2" style="float: left;">产品详情</a>
+				<a class="go3" href="#panel3" style="float: right;">品牌介绍</a>
+			</div>
+
+			<!--产品标题-->
+			<div class="title_ti2">
+				<span>FRUITI果的 果汁组合</span>
+			</div>
+			
+			<!--品鉴记录与规格-->
+			<div id="panel1" class="panel"></div>
+			<div class="record_zq">
+				<div class="record_zq_top_bg"> <span></span> </div>
+				<div class="record_zq_con"> 
+					<span class="i_strong">【品鉴记录】</span><br /> 
+					<span>
+						果的HPP超高压杀菌100%鲜榨果汁品牌，10年潜心研发，极致好果汁，极致锁定——锁住口感、锁住新鲜、锁住营养。果的果汁自控果园，严控了农药污染，是在中国唯一获得GFSI标准认证的品牌。所有果汁不添加任何添加物，甚至是水和糖，全程冷链配送，带给消费者安全、新鲜、美味的体验。
+					</span><br />
+					<span class="i_strong">【规 &nbsp;格】</span><br />
+					<span>
+						1．	4种口味果汁混合装（200ml*8瓶）<br />
+						芒果苹果汁、树莓苹果汁、蓝莓苹果汁、富士苹果汁  各2瓶<br />
+						2．	小苹果果汁（150ml*8瓶）<br />
+						<font color="red">保质期：90天（冰箱冷藏0-4℃保存）</font>
+
+					</span>
+				</div>
+				<div class="record_zq_bottom_bg"> <span></span> </div>
+			</div>
+			
+			<!--图片罗列-->
+			<div id="panel2" class="panel"></div>
+			<div class="img_bg intro_baojie"><img src="__PUBLIC__/img/9/00.jpg" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/0.jpg" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/1.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/2.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/3.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/4.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/5.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/6.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/7.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/8.jpg" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/9.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/10.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/11.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/12.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/13.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/14.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/15.png" width="100%" height="100%"></div>
+			<div class="img_bg"><img src="__PUBLIC__/img/9/16.png" width="100%" height="100%"></div>
+			
+			<!--配送范围-->
+			<div class="rang_list">
+				<!--配送范围列表---begin-->
+				<div class="rang_tc">
+					<table class="table1" cellpadding="5" cellspacing="0">
+						<tr>
+							<th colspan="4" class="one" style="width: 100%;">配送范围</th>
+						</tr>
+						<tr class="bg_line">
+							<th style="width: 50%;">省（直辖市）</th>
+							<th style="width: 50%;">城市</th>
+						</tr>
+					</table>
+
+					<div class="table2_con">
+						<table class="table2">
+							<colgroup width="50%"></colgroup>
+							<colgroup width="50%"></colgroup>
+							<tr>
+								<td>上海</td>
+								<td>上海</td>
+							</tr>
+							<tr>		
+								<td>北京	</td>
+								<td>北京</td>
+							</tr>
+							<tr>		
+								<td>安徽	</td>
+								<td>合肥</td>
+							</tr>
+							<tr>		
+								<td>福建	</td>
+								<td>厦门</td>
+							</tr>
+							<tr>		
+								<td>广东	</td>
+								<td>东莞</td>
+							</tr>
+							<tr>		
+								<td>广东	</td>
+								<td>佛山</td>
+							</tr>
+							<tr>		
+								<td>广东	</td>
+								<td>广州</td>
+							</tr>
+							<tr>		
+								<td>广东	</td>
+								<td>惠州</td>
+							</tr>
+							<tr>		
+								<td>广东	</td>
+								<td>深圳</td>
+							</tr>
+							<tr>		
+								<td>广东	</td>
+								<td>肇庆</td>
+							</tr>
+							<tr>		
+								<td>广东	</td>
+								<td>中山</td>
+							</tr>
+							<tr>		
+								<td>广东	</td>
+								<td>珠海</td>
+							</tr>
+							<tr>		
+								<td>河北	</td>
+								<td>廊坊</td>
+							</tr>
+							<tr>		
+								<td>河北	</td>
+								<td>石家庄</td>
+							</tr>
+							<tr>		
+								<td>河南	</td>
+								<td>郑州</td>
+							</tr>
+							<tr>		
+								<td>黑龙江	</td>
+								<td>哈尔冰</td>
+							</tr>
+							<tr>		
+								<td>湖北	</td>
+								<td>武汉</td>
+							</tr>
+							<tr>		
+								<td>湖南	</td>
+								<td>长沙</td>
+							</tr>
+							<tr>		
+								<td>吉林	</td>
+								<td>长春</td>
+							</tr>
+							<tr>		
+								<td>江苏	</td>
+								<td>常州</td>
+							</tr>
+							<tr>		
+								<td>江苏	</td>
+								<td>淮安</td>
+							</tr>
+							<tr>		
+								<td>江苏	</td>
+								<td>南京</td>
+							</tr>
+							<tr>		
+								<td>江苏	</td>
+								<td>南通</td>
+							</tr>
+							<tr>		
+								<td>江苏	</td>
+								<td>苏州</td>
+							</tr>
+							<tr>		
+								<td>江苏	</td>
+								<td>泰州</td>
+							</tr>
+							<tr>		
+								<td>江苏	</td>
+								<td>无锡</td>
+							</tr>
+							<tr>		
+								<td>江苏	</td>
+								<td>盐城</td>
+							</tr>
+							<tr>		
+								<td>江苏	</td>
+								<td>扬州</td>
+							</tr>
+							<tr>		
+								<td>江苏	</td>
+								<td>镇江</td>
+							</tr>
+							<tr>		
+								<td>江西	</td>
+								<td>南昌</td>
+							</tr>
+							<tr>		
+								<td>辽宁	</td>
+								<td>大连</td>
+							</tr>
+							<tr>		
+								<td>辽宁	</td>
+								<td>沈阳</td>
+							</tr>
+							<tr>		
+								<td>山东	</td>
+								<td>济南</td>
+							</tr>
+							<tr>		
+								<td>山东	</td>
+								<td>青岛</td>
+							</tr>
+							<tr>		
+								<td>山西	</td>
+								<td>太原</td>
+							</tr>
+							<tr>		
+								<td>陕西	</td>
+								<td>西安</td>
+							</tr>
+							<tr>		
+								<td>四川	</td>
+								<td>成都</td>
+							</tr>
+							<tr>		
+								<td>天津	</td>
+								<td>天津</td>
+							</tr>
+							<tr>		
+								<td>浙江	</td>
+								<td>杭州</td>
+							</tr>
+							<tr>		
+								<td>浙江	</td>
+								<td>湖州</td>
+							</tr>
+							<tr>		
+								<td>浙江	</td>
+								<td>嘉兴</td>
+							</tr>
+							<tr>		
+								<td>浙江	</td>
+								<td>金华</td>
+							</tr><tr>		
+								<td>浙江	</td>
+								<td>宁波</td>
+							</tr>
+							<tr>		
+								<td>浙江	</td>
+								<td>绍兴</td>
+							</tr>
+							<tr>		
+								<td>浙江	</td>
+								<td>舟山</td>
+							</tr>
+							<tr>		
+								<td>浙江	</td>
+								<td>温州</td>
+							</tr>
+							<tr>		
+								<td>重庆	</td>
+								<td>重庆</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<!--配送范围列表---end-->
+			</div>
+			<!---->
+			
+			<!--品牌介绍-->
+			<div id="panel3" class="panel"></div>
+			<div class="intro_zq">
+				<span class="i_strong">品牌介绍</span><br/>
+				<span>
+					FRUITI果的以CHIC GROUP熙可集团为背景，只为你提供真正原汁原味的100%冷压鲜榨果汁，公司拥有全球尖端HPP超高压冷杀菌技术，旗下品牌INVO产品更是畅销欧美；公司作为中国最大的酸性水果出口商, 拥有自控果园，严格控制农残，无任何添加，全程冷链，只为那一口原汁原味的芬芳体验。
+				</span>
+			</div>
+		</div>
+		
+		<!--按钮处-->
+		<div class="footer">
+			<span><a href="javascript:modalBottom();">点击兑换</a></span>
+		</div>
+		<div class="face" id="face"></div>
+		<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+		<script type="text/javascript" src="http://cdn.huangjuntu.vip/js/layer3.0.3/mobile/layer.js"></script>
+		<script>
+//			下滑动一定距离时出现锚点
+			$(function() {
+				//产品规格高度
+				var record_zq = $(".record_zq").offset().top;
+				console.log("产品规格1:"+record_zq);
+				
+				//产品详情高度
+					var intro_baojie = $(".intro_baojie").offset().top;
+					console.log("产品详情2:"+intro_baojie);
+				
+				//品牌介绍高度
+					var intro_zq = $(".intro_zq").offset().top;
+					console.log("品牌介绍3:"+intro_zq);	
+				
+				//测试高度				
+				$(window).scroll(function() {
+					console.log("产品规格"+record_zq);
+					console.log("产品详情"+intro_baojie);
+					console.log("品牌介绍"+intro_zq);
+				
+					var this_scrollTop = $(this).scrollTop();
+					console.log("滚动条范围"+this_scrollTop);
+				
+					//产品规格1（record_zq）:416
+					//产品详情2（intro_baojie）:1324.65625
+					//品牌介绍3（intro_zq）:3281.90625
+					
+					if(this_scrollTop >= 250.09375) {
+						
+						if(this_scrollTop > record_zq*0.8 && this_scrollTop < intro_baojie *0.9) {
+							$(".go1").addClass("col_red");
+							$(".go2").removeClass("col_red");
+							$(".go3").removeClass("col_red");
+							
+							
+						} if( intro_baojie*0.9 <= this_scrollTop && this_scrollTop <=intro_zq*0.8){
+							$(".go1").removeClass("col_red");
+							$(".go3").removeClass("col_red");
+							$(".go2").addClass("col_red");
+							
+						}if( intro_zq*0.8 < this_scrollTop){
+							$(".go2").removeClass("col_red");
+							$(".go1").removeClass("col_red");
+							$(".go3").addClass("col_red");
+						}
+						$(".go").show();
+					} else {
+						$(".go").hide();
+					}
+				});
+			});
+			
+			
+			
+//			兑换点击按钮
+			function modalBottom() {
+				layer.open({
+					type: 1,
+					title: "请填入兑换信息",
+					closeBtn: 0,
+					shadeClose: true,//点击遮罩关闭
+					skin: 'yourclass',
+					content: '<div class="info_form" id="info_form">\
+					<form id="contact" action="" method="post">\
+						<div class="iblock"><span class="leftname">姓名</span><input placeholder="请输入收货人姓名" type="text" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">电话</span><input placeholder="请输入收货人电话" type="tel" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">邮件</span><input placeholder="请输入收货人邮箱" type="email" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">地址</span><input placeholder="请输入收货人地址" type="text" required class="rightinput"></div><div class="clear"></div>\
+						<textarea placeholder="留言~" required></textarea>\
+						<button name="doExchange" type="button" id="doExchange"><a href="last.html">我要兑换</a></button> \
+					</form>\
+				</div>'
+				});
+				
+
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

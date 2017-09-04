@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+		<title>2-本来生活水果</title>
+		<link href="css/index.css" rel="stylesheet" />
+		<style>
+			/*全局公共样式*/input,button,select,textarea{outline: none;}
+			*{padding: 0px;margin: 0px;}
+			form,select,input,img{border: 0;margin: 0px;padding: 0px;vertical-align: middle;width: 100%;}
+			li{list-style: none;}
+			a{text-decoration: none;}
+			body,html{height: auto;margin: 0 auto;min-width: 20rem;max-width: 35rem;}
+			
+			/*文中局部公共样式*/
+			.i_strong{font-weight: bold;}
+			
+			/*banner的背景*/
+			#content{width: auto;height: 100%;margin: 0 auto;padding: 0 1rem;}
+			.banner_bg{background: url(__PUBLIC__/img/banner_top.jpg);height: 14rem;background-size: 100% 100%;width: 100%;margin-bottom: 1rem;}
+			
+			/*标题样式*/
+			.title_ti2{width: 100%;height: 6rem;background: pink;margin: 0rem auto;background: url(__PUBLIC__/img/title_bg.png) no-repeat;background-size: 100% 100%;}
+            .title_ti2 span{color: #FFFFFF;font-size: 0.92rem;display: block;margin: 0 auto;height: 6rem;line-height: 6rem;text-align: center;}
+			
+			/*图片样式*/
+			.img_bg{width: 100%;height: auto;margin-bottom: 0.5rem;border-radius: 51px;overflow: hidden;}
+			
+			/*商品文字信息介绍*/
+			.text_intro{background: rgb(241, 241, 241) url(__PUBLIC__/img/quot.jpg) no-repeat 1% 0.31rem;color: #6C6B6B;margin: 10px 0px;padding: 0.93rem 1.25rem 0.93rem 2.81rem;font-size: 0.87rem;line-height: 1.39rem;outline: 0px;border: 0px currentcolor;vertical-align: baseline;}
+			
+			/*品鉴记录与规格*/
+			.record_zq{padding-right: 0.31rem;padding-left: 0.31rem;border: 1px solid rgb(252, 180, 43);line-height: 0.62rem;margin: 3rem 0 2rem 0;}
+			.record_zq_top_bg{margin-top: -0.5rem;margin-left: 8.75rem;width: 50%;height: 0.5rem;background-color: rgb(254, 254, 254);}
+			.record_zq_top_bg span{border-radius: 100%;width: 0.5rem;height: 0.5rem;display: inline-block;background-color: rgb(252, 180, 43);}
+			.record_zq_con{margin: 0.93rem;color: rgb(62, 62, 62);line-height: 2em;font-size: 0.87rem;}
+			.record_zq_con span{color: #6C6B6B}
+			.record_zq_bottom_bg{margin-bottom: -0.25rem;margin-left: 1.56rem;width: 65%;height: 0.62rem;text-align: right;background-color: rgb(254, 254, 254);}
+			.record_zq_bottom_bg span{margin-bottom: 1px;border-radius: 100%;width: 0.5rem;height: 0.5rem;display: inline-block;background-color: rgb(252, 180, 43);}
+			
+			.record_zq_con ul li{font-size: 0.875rem;line-height: 1.1875rem;margin: 0.8rem 0;color: #6C6B6B;}
+		    .record_zq_con ul li .cat{font-weight: bold;}
+		    .record_zq_con h4{font-weight: normal;color: #6C6B6B;text-align: center;border-bottom: 1px dotted #FCB42B;}
+			
+			/*品牌介绍*/
+			.intro_zq{font-size: 0.87rem;color: #6C6B6B;margin: 2rem 0rem 5rem 0rem;padding: 2rem 1rem;border-left: 3px solid rgb(252, 180, 43);border-top-width: 3px;border-right-width: 3px;border-bottom-width: 3px;border-top-left-radius: 50px;border-bottom-right-radius: 50px;box-shadow: rgb(165, 165, 165) 5px 5px 2px 0px;background-color: rgb(250, 250, 250);}
+			.intro_zq span{line-height: 1.5rem;}
+			
+			/*按钮*/
+            .footer{width: 100%; height: 4rem; line-height: 4rem; background: white; position: fixed; bottom: 0; min-width: 20rem; max-width: 35rem;}
+			.footer span{color: #fff;font-weight: normal;display: block;margin: 0.5rem auto;width: 90%;text-align: center;height: 3rem;line-height: 3rem;border-radius: 1rem;border: 1px solid #d2a000;box-shadow: 0 1px 2px #fedd71 inset, 0 -1px 0 #a38b39 inset, 0 -2px 3px #fedd71 inset;background: -webkit-linear-gradient(top, #fece34, #d8a605);}
+			.footer span:active{border: 0px solid #ef4300;}
+			.footer span a{color: white;display: block;}
+			
+			/*表格*/
+			#contact input,textarea{font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;}
+			#contact{/*F9F9F9*//*background: #CCE8CF;*/margin: 0px auto;width: 90%;/*border-radius: 5%;*/}
+			#contact h4{color: #F96;display: block;font-size: 1.2rem;font-weight: bold;margin-bottom: 0.6rem;}
+			#contact input,textarea{width: 90%;border: 1px solid #CCC;background: #FFF;margin: 0 0 0.4rem;padding: 0.5rem;}
+			#contact input[type="text"]:hover,#contact input[type="email"]:hover,#contact input[type="tel"]:hover,#contact input[type="url"]:hover,#contact textarea:hover{-webkit-transition: border-color 0.3s ease-in-out;-moz-transition: border-color 0.3s ease-in-out;transition: border-color 0.3s ease-in-out;border: 1px solid #AAA;}
+			#contact textarea{height: 100px;resize: none;width: 100%;box-sizing: border-box;}
+			#contact button[type="button"]{cursor: pointer;width: 100%;border: none;background: #F9683D;color: #FFF;line-height: 2.5rem;height: 2.5rem;font-size: 0.9375rem;box-sizing: border-box;}
+			/*#contact button[type="submit"]:hover{background: #09C;-webkit-transition: background 0.3s ease-in-out;-moz-transition: background 0.3s ease-in-out;transition: background-color 0.3s ease-in-out;}
+			#contact button[type="submit"]:active{box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}*/
+			#contact input:focus,#contact textarea:focus{outline: 0;border: 1px solid #999;}
+			#contact .leftname{display: block;float: left;width: 20%;height: 1.875rem;line-height: 1.875rem;text-align: center;border: 1px solid #dedede;border-right: none;border-bottom-left-radius: 0.3125rem;border-top-left-radius: 0.3125rem;background-color: #dedede;box-sizing: border-box;}
+			#contact .rightinput{display: block;/*float: right;*/width: 80%;height: 1.875rem;line-height: 1.875rem;box-sizing: border-box;}
+			#contact .iblock{margin-bottom: 0.1875rem;}
+			.face{background: black;opacity: 0.6;z-index: 888;margin: 0 auto;width: 100%;height: 100%;position: fixed;top: 0;left: 0;padding-top: 20%;display: none;}
+			.info_form{padding-bottom: 2rem;z-index: 999;margin: 0 auto;width: 100%;height: 100%;top: 0;left: 0;}
+			.info_form a{color: white;}
+			.go{width: calc(100% - 2rem);min-width: 20rem;max-width: 33rem;background: yellow;position: fixed;top: 0;background: white;height: 3rem;line-height: 3rem;border-bottom: 1px solid #D6D5D6;box-sizing: border-box;display: none;}
+			.go1,.go2,.go3{font-weight: bold;width: 23%;height: 2rem;line-height: 2rem;text-align: center;margin: 0.5rem 5%;font-size: 0.875rem;color: black;text-shadow: 1px 1px 1px #fff;border: 1px solid #dce1e6;box-sizing: border-box;box-shadow: 0 1px 2px #fff inset, 0 -1px 0 #a8abae inset;background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);letter-spacing: 2px;/* text-indent: 8px;*/}
+			.clear{clear: both}
+			.col_red{color: #D27912;}
+			
+			/*补充layer的样式*/
+			.layui-m-layer1 .layui-m-layerchild{border: none;border-radius: 0;border-radius: 10px;min-width: 20rem;max-width: 35rem;}
+		
+			/*配送范围*/
+			.rang{width: 100%;padding: 0.9375rem;background: #F1F1F1;line-height: 1.875rem;font-size: 0.875rem;box-sizing: border-box;border-left: 0.3125rem solid #0099CC;margin-bottom: 1.25rem;}
+
+		</style>
+	</head>
+
+	<body id="body">
+		<div class="banner_bg"> </div>
+		<div id="content">
+			<div class="go">
+				<a class="go1" href="#panel1" style="float: left;">产品规格</a>
+				<a class="go2" href="#panel2" style="float: left;">产品详情</a>
+				<a class="go3" href="#panel3" style="float: right;">品牌介绍</a>
+			</div>
+
+			<!--产品标题-->
+			<div class="title_ti2">
+				<span>本来生活花好月圆水果组合</span>
+			</div>
+			<!--品鉴记录与规格-->
+			<div id="panel1" class="panel"></div>
+			<div class="record_zq">
+				<div class="record_zq_top_bg"> <span></span> </div>
+				<div class="record_zq_con"> <span class="i_strong">【品鉴记录】</span><br /> 
+					<span>
+						选取当地当季新鲜水果营养丰富，水果大小、形状、色泽良好、足斤足两，入口鲜香、甜
+						酸适宜、水分充足，水果采取原产地直采，本来生活生鲜直送保证其新鲜度。
+					</span><br /> 
+					<span class="i_strong">【规 &nbsp;格】</span><br /> 
+					<h4>A类配2件、B类配2件、C类配1件、D类配1件，共6件（根据时令配送对应果品，具体以实际收到为准）</h4>
+					<ul>
+						<li><span class="cat">A类：</span>梨(6-9粒)、国产苹果(6-9粒)、柠檬(4-6粒)、李子(1KG)、甜瓜(1-2粒)、圣女果(1KG)</li>
+						<li><span class="cat">B类：</span>水蜜桃(6粒)、油桃(4-6粒)、龙眼(1KG)、哈密瓜(1粒)、百香果(500G) </li>
+						<li><span class="cat">C类：</span>进口苹果(8粒)、进口橙(12粒)、进口火龙果(2.2-2.5KG)、新疆西州蜜(1.5KG以上) </li>
+						<li><span class="cat">D类：</span>进口金奇异果(5-6粒)、进口牛油果(4-6粒)、台湾凤梨(1.3KG左右)、进口山竹(1KG) </li>
+					</ul>
+					
+				</div>
+				<div class="record_zq_bottom_bg"> <span></span> </div>
+			</div>
+			<!--图片罗列-->
+			<div class="img_bg"> <img src="__PUBLIC__/img/2/main1.jpeg" width="100%" height="100%"> </div>
+			<div class="img_bg"> <img src="__PUBLIC__/img/2/main2.jpeg" width="100%" height="100%"> </div>
+			<div class="img_bg"> <img src="__PUBLIC__/img/2/main3.jpeg" width="100%" height="100%"> </div>
+				
+			<!--配送范围-->
+			<div class="rang">
+				配送范围：
+				上海、北京、深圳、广州、天津、苏州、杭州、南京、常州、淮安、连云港、
+				南通、宿迁、台州、无锡、徐州、盐城、扬州、镇江、湖州、嘉兴、金华、宁波、
+				绍兴、泰州、温州、舟山、佛山、东莞、惠州、珠海。
+			</div>
+			<div id="panel2" class="panel"></div>
+			
+			<!--商品详情介绍-->
+			<div class="text_intro intro_first">
+				<span class="i_strong">佳沛新西兰金奇异果</span><br />
+				<span>
+					佳沛新西兰金奇异果果心细、皮薄、果肉爽滑无比、甜蜜水润，外形长圆，几乎无毛。
+					常温可放置7天左右，冷藏可延续至20-25天。富含维生素C、E、叶酸、膳食纤维等多种营养物质。
+				</span><br/>
+			</div>
+			<div class="img_bg"> <img src="__PUBLIC__/img/2/kiwi1.jpg" width="100%" height="100%"> </div>
+			<div class="img_bg"> <img src="__PUBLIC__/img/2/kiwi2.jpg" width="100%" height="100%"> </div>
+			<div class="text_intro">
+				<span class="i_strong">美国新奇士橙</span><br />
+				<span>
+					精选美国进口新奇士橙果圆形至长圆形，橙黄色，油胞凸起，果皮不易剥离。中心柱充实；
+					汁味甜而香。含有大量的糖和一定量的柠檬酸以及丰富的维生素C，营养价值较高。果实还含
+					维生素P，具有极高的医药价值。
+				</span><br/>
+			</div>
+			<div class="img_bg" style="height: 19rem;">
+				<img src="__PUBLIC__/img/2/orange1.jpg" width="100%" height="100%">
+			</div>
+			<div class="img_bg">
+				<img src="__PUBLIC__/img/2/orange2.jpg" width="100%" height="100%">
+			</div>
+			
+			<div class="text_intro">
+				<span class="i_strong">安岳柠檬</span><br />
+				<span>
+					饱满结实，皮薄少核，汁多肉嫩，柠檬的酸入口虽刺激却回味清爽，
+					与其他食物融合，时常会有惊喜的效果。
+				</span><br/>
+			</div>
+			<div class="img_bg" style="height: 19rem;">
+				<img src="__PUBLIC__/img/2/lemon1.jpg" width="100%" height="100%">
+			</div>
+			<div class="img_bg">
+				<img src="__PUBLIC__/img/2/lemon2.jpg" width="100%" height="100%">
+			</div>
+			
+			<div class="text_intro">
+				<span class="i_strong">新疆西州蜜瓜</span><br />
+				<span>
+					新疆西州蜜瓜拥有橘黄的果肉，成熟度越高，中心越发橘红；果肉厚亦带软滑，
+					果刀切下可听“咔嚓”清脆声；入口即感爽脆，多汁水润，果香清新淡雅而不腻，
+					盈溢口腔；味如蜜甜，顷刻回甘，生津解腻。
+				</span><br/>
+			</div>
+			<div class="img_bg" style="height: 19rem;">
+				<img src="__PUBLIC__/img/2/hami1.jpg" width="100%" height="100%">
+			</div>
+			<div class="img_bg">
+				<img src="__PUBLIC__/img/2/hami2.jpg" width="100%" height="100%">
+			</div>
+			
+			<div class="text_intro">
+				<span class="i_strong">越南红心火龙果</span><br />
+				<span>
+					精选越南红心火龙果，越南地属热带季风气候，常年适宜的温度和光照，
+					让火龙果享受充足的日光浴。火龙果外表红艳张扬，内里玫瑰色果肉，
+					果肉饱满绵软，口感丝滑多汁，娇艳欲滴。相比普通白心火龙果更水嫩，
+					口感更清爽，清甜而不腻，隐约中透露着兰花芳香。
+				</span><br/>
+			</div>
+			<div class="img_bg" style="height: 19rem;">
+				<img src="__PUBLIC__/img/2/pitaya1.jpg" width="100%" height="100%">
+			</div>
+			<div class="img_bg">
+				<img src="__PUBLIC__/img/2/pitaya2.jpg" width="100%" height="100%">
+			</div>
+			
+			<div class="text_intro">
+				<span class="i_strong">泰国进口龙眼</span><br />
+				<span>
+					泰国龙眼，果中明珠，肉厚核小，圆润透亮，细嫩香滑，蜜甜多汁。
+					颜-如玉，圆若骊珠，赤若金丸，肉似波利，核如黑漆。
+					味-蜜甜，剥开薄薄的褐色表皮，蹦出的蜜汁沾满指尖，果肉莹润饱满如明珠，入口蜜甜润喉。
+				</span><br/>
+			</div>
+			<div class="img_bg" style="height: 19rem;">
+				<img src="__PUBLIC__/img/2/longan1.jpg" width="100%" height="100%">
+			</div>
+			<div class="img_bg">
+				<img src="__PUBLIC__/img/2/longan2.jpg" width="100%" height="100%">
+			</div>
+			
+			<!--品牌介绍-->
+			<div id="panel3" class="panel"></div>
+			<div class="intro_zq">
+				<span class="i_strong">品牌介绍</span><br/>
+				<span>
+					本来生活网精选来自全世界的优质、健康、绿色、有机、品牌食材食品，
+					基地直供、冷链配送、安全检测，服务到家。我们始终将安全视为首要原则，
+					成立了品控委员会，围绕生产者、职能部门、认证标准、监控、检测、消费者
+					等环节设立6道安全屏障；坚持对每一批次的农产品进行43项常规项目抽检，可将
+					最常见、最易添加的重金属、农药残留、添加剂等危害拒之门外。
+				</span>
+			</div>
+		</div>
+		
+		<!--按钮处-->
+		<div class="footer">
+			<span><a href="javascript:modalBottom();">点击兑换</a></span>
+		</div>
+		<div class="face" id="face"></div>
+		<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+		<script type="text/javascript" src="http://cdn.huangjuntu.vip/js/layer3.0.3/mobile/layer.js"></script>
+		<script>
+//			下滑动一定距离时出现锚点
+			$(function() {
+				//产品规格高度
+				var record_zq = $(".record_zq").offset().top;
+				console.log("产品规格1:"+record_zq);
+				
+				//产品详情高度
+					var intro_first = $(".intro_first").offset().top;
+					console.log("产品详情2:"+intro_first);
+				
+				//品牌介绍高度
+					var intro_zq = $(".intro_zq").offset().top;
+					console.log("品牌介绍3:"+intro_zq);	
+				
+				//测试高度				
+				$(window).scroll(function() {
+					console.log("产品规格"+record_zq);
+					console.log("产品详情"+intro_first);
+					console.log("品牌介绍"+intro_zq);
+				
+					var this_scrollTop = $(this).scrollTop();
+					console.log("滚动条范围"+this_scrollTop);
+				
+					//产品规格1（record_zq）:416
+					//产品详情2（intro_first）:1324.65625
+					//品牌介绍3（intro_zq）:3281.90625
+					
+					if(this_scrollTop >= 250.09375) {
+						
+						if(this_scrollTop > record_zq*0.9 && this_scrollTop < intro_first *0.9) {
+							$(".go1").addClass("col_red");
+							$(".go2").removeClass("col_red");
+							$(".go3").removeClass("col_red");
+							
+							
+						} if( intro_first*0.9 <= this_scrollTop && this_scrollTop <=intro_zq*0.8){
+							$(".go1").removeClass("col_red");
+							$(".go3").removeClass("col_red");
+							$(".go2").addClass("col_red");
+							
+						}if( intro_zq*0.8 < this_scrollTop){
+							$(".go2").removeClass("col_red");
+							$(".go1").removeClass("col_red");
+							$(".go3").addClass("col_red");
+						}
+						$(".go").show();
+					} else {
+						$(".go").hide();
+					}
+				});
+			});
+			
+//			兑换点击按钮
+			function modalBottom() {
+				layer.open({
+					type: 1,
+					title: "请填入兑换信息",
+					closeBtn: 0,
+					shadeClose: true,//点击遮罩关闭
+					skin: 'yourclass',
+					content: '<div class="info_form" id="info_form">\
+					<form id="contact" action="" method="post">\
+						<div class="iblock"><span class="leftname">姓名</span><input placeholder="请输入收货人姓名" type="text" required autofocus class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">电话</span><input placeholder="请输入收货人电话" type="tel" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">邮件</span><input placeholder="请输入收货人邮箱" type="email" required class="rightinput"></div><div class="clear"></div>\
+						<div class="iblock"><span class="leftname">地址</span><input placeholder="请输入收货人地址" type="text" required class="rightinput"></div><div class="clear"></div>\
+						<textarea placeholder="留言~" required></textarea>\
+						<button name="doExchange" type="button" id="doExchange"><a href="last.html">我要兑换</a></button> \
+					</form>\
+				</div>'
+				});
+
+			}
+		</script>
+	</body>
+
+</html>

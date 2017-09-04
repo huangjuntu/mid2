@@ -21,22 +21,11 @@
 			.forms{width: 17.5rem;height: 30.3125rem;}
 			.input_outer{width: 80%;margin: 1rem auto;border-radius: 3.125rem;border: rgb(234, 225, 57) 2px solid !important;}
 			
-			
-			.logo_box p{text-align: center;color: #333333;line-height: 1.5625rem;height: 1.5625rem;font-size: 0.875rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+ 			.logo_box p{text-align: center;color: #333333;line-height: 1.5625rem;font-size: 0.875rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 			.u_user{width: 1.5625rem;height: 1.5625rem;background: url(__PUBLIC__/img/login_ico.png);background-position: -7.8125rem 0;position: absolute;margin: 0.625rem 0.8125rem;}
 			.us_uer{width: 1.5625rem;height: 1.5625rem;background-image: url(__PUBLIC__/img/login_ico.png);background-position: -7.8125rem -2.125rem;position: absolute;margin: 0.625rem 0.8125rem;}
 			.l-login{position: absolute;z-index: 1;left: 3.125rem;top: 0;height: 2.875rem;font: 0.875rem "microsoft yahei", Helvetica, Tahoma, Arial, "Microsoft jhengHei";line-height: 2.875rem;}
-			.text{
-				    width: 13.75rem;height: 2rem;outline: none;display: inline-block;font: 0.875rem "microsoft yahei", Helvetica, Tahoma, Arial, "Microsoft jhengHei";margin-left: 3.125rem;
-				    border: none;
-				    background: none;
-				    line-height: 2rem;
-				    /* text-align: center; */
-				    vertical-align: ce;
-				    vertical-align: center;
-				    vertical-align: middle;
-				    padding: 0.5rem;
-				}
+			.text{width: 13.75rem;height: 2rem;outline: none;display: inline-block;font: 0.875rem "microsoft yahei", Helvetica, Tahoma, Arial, "Microsoft jhengHei";margin-left: 3.125rem;border: none;background: none;line-height: 2rem;vertical-align: ce;vertical-align: center;vertical-align: middle;padding: 0.5rem;}
 			.mb2{margin-bottom: 1.875rem;margin: 1rem auto;width: 80%;}
 			.mb2 a{text-decoration: none;outline: none;}
 			.submit{padding: 0.9375rem;margin-top: 1.25rem;display: block;}
@@ -45,12 +34,15 @@
 				#content{width: 100%;margin: 0 auto;background:url(__PUBLIC__/img/login_bg2.jpg) no-repeat;/*background-size: 100% auto;    */background-size: 113% 100%;}
 				.logo_box{width: 100%;color: #EEE;position: absolute;left: 50%;top: 47%;margin-left: -50%;}
 			}
+			
+			/*补充layer的样式*/
+            .layui-m-layer1 .layui-m-layerchild{border: none;border-radius: 0;border-radius: 10px;min-width: 20rem;max-width: 35rem;}
+
 		</style>
 	</head>
 
 	<body>
 		<div id="content">
-			<!--<a href="index1.html">点击跳转</a>-->
 			<div class="logo_box">
 				<form action="#" name="f" method="post">
 					<div class="input_outer">
@@ -67,14 +59,13 @@
 					</div>
 				</form>
 				<p>温馨提示：</p>
-				<p>如有疑问，请致电400-161-0009咨询</p>
+				<p>如有疑问，请致电：021-53880127咨询<br/>（服务时间：周一至周五9:00-12:00；13:00-17:30）</p>
 			</div>
 
 		</div>
 		<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
 		<script>
 			var window_height = window.innerHeight;
-//			var window_height = window.screen.height;
 			console.log(window_height);
 			$("#content").css("height", window_height);   
 		</script>

@@ -5,177 +5,82 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
 		<title>3-博影电子券</title>
-		<style>
-			/*全局公共样式*/input,button,select,textarea{outline: none;}
-			*{padding: 0px;margin: 0px;}
-			form,select,input,img{border: 0;margin: 0px;padding: 0px;vertical-align: middle;width: 100%;}
-			li{list-style: none;}
-			a{text-decoration: none;}
-			body,html{height: auto;margin: 0 auto;min-width: 20rem;max-width: 35rem;}
-			
-			/*文中局部公共样式*/
-			.i_strong{font-weight: bold;}
-			
-			/*banner的背景*/
-			#content{width: auto;height: 100%;margin: 0 auto;padding: 0 1rem;}
-			.banner_bg{background: url(__PUBLIC__/img/banner_top.jpg);height: 14rem;background-size: 100% 100%;width: 100%;margin-bottom: 1rem;}
-			
-			/*标题样式*/
-			.title_ti2{width: 100%;height: 6rem;background: pink;margin: 0rem auto;background: url(__PUBLIC__/img/title_bg.png) no-repeat;background-size: 100% 100%;}
-            .title_ti2 span{color: #FFFFFF;font-size: 0.92rem;display: block;margin: 0 auto;height: 6rem;line-height: 6rem;text-align: center;}
-			
-			/*图片样式*/
-			.img_bg{box-sizing: border-box;width: 100%;height: auto;margin-bottom: 2rem;border-radius: 10px;overflow: hidden;border: 1px solid #DADADA;}
-			
-			/*品鉴记录与规格*/
-			.record_zq{padding-right: 0.31rem;padding-left: 0.31rem;border: 1px solid rgb(252, 180, 43);line-height: 0.62rem;margin: 3rem 0 2rem 0;}
-			.record_zq_top_bg{margin-top: -0.5rem;margin-left: 8.75rem;width: 50%;height: 0.5rem;background-color: rgb(254, 254, 254);}
-			.record_zq_top_bg span{border-radius: 100%;width: 0.5rem;height: 0.5rem;display: inline-block;background-color: rgb(252, 180, 43);}
-			.record_zq_con{margin: 0.93rem;color: rgb(62, 62, 62);line-height: 2em;font-size: 0.87rem;}
-			.record_zq_con span{color: #6C6B6B}
-			.record_zq_bottom_bg{margin-bottom: -0.25rem;margin-left: 1.56rem;width: 65%;height: 0.62rem;text-align: right;background-color: rgb(254, 254, 254);}
-			.record_zq_bottom_bg span{margin-bottom: 1px;border-radius: 100%;width: 0.5rem;height: 0.5rem;display: inline-block;background-color: rgb(252, 180, 43);}
-			
-			.record_zq_con ul li{font-size: 0.875rem;line-height: 1.1875rem;margin: 0.8rem 0;color: #6C6B6B;}
-		    .record_zq_con ul li .cat{font-weight: bold;}
-		    .record_zq_con h4{font-weight: normal;color: #6C6B6B;text-align: center;border-bottom: 1px dotted #FCB42B;}
-			
-			/*品牌介绍*/
-			.intro_zq{font-size: 0.87rem;color: #6C6B6B;margin: 2rem 0rem 2rem 0rem;padding: 2rem 1rem;border-left: 3px solid rgb(252, 180, 43);border-top-width: 3px;border-right-width: 3px;border-bottom-width: 3px;border-top-left-radius: 50px;border-bottom-right-radius: 50px;box-shadow: rgb(165, 165, 165) 5px 5px 2px 0px;background-color: rgb(250, 250, 250);}
-			.intro_zq span{line-height: 1.5rem;}
-			
-			/*按钮*/
-            .footer{width: 100%; height: 4rem; line-height: 4rem; background: white; position: fixed; bottom: 0; min-width: 20rem; max-width: 35rem;}
-			.footer span{color: #fff;font-weight: normal;display: block;margin: 0.5rem auto;width: 90%;text-align: center;height: 3rem;line-height: 3rem;border-radius: 1rem;border: 1px solid #d2a000;box-shadow: 0 1px 2px #fedd71 inset, 0 -1px 0 #a38b39 inset, 0 -2px 3px #fedd71 inset;background: -webkit-linear-gradient(top, #fece34, #d8a605);}
-			.footer span:active{border: 0px solid #ef4300;}
-			.footer span a{color: white;display: block;}
-			
-			/*表格*/
-			#contact input,textarea{font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;}
-			#contact{/*F9F9F9*//*background: #CCE8CF;*/margin: 0px auto;width: 90%;/*border-radius: 5%;*/}
-			#contact h4{color: #F96;display: block;font-size: 1.2rem;font-weight: bold;margin-bottom: 0.6rem;}
-			#contact input,textarea{width: 90%;border: 1px solid #CCC;background: #FFF;margin: 0 0 0.4rem;padding: 0.5rem;}
-			#contact input[type="text"]:hover,#contact input[type="email"]:hover,#contact input[type="tel"]:hover,#contact input[type="url"]:hover,#contact textarea:hover{-webkit-transition: border-color 0.3s ease-in-out;-moz-transition: border-color 0.3s ease-in-out;transition: border-color 0.3s ease-in-out;border: 1px solid #AAA;}
-			#contact textarea{height: 100px;resize: none;width: 100%;box-sizing: border-box;}
-			#contact button[type="button"]{cursor: pointer;width: 100%;border: none;background: #F9683D;color: #FFF;line-height: 2.5rem;height: 2.5rem;font-size: 0.9375rem;box-sizing: border-box;}
-			/*#contact button[type="submit"]:hover{background: #09C;-webkit-transition: background 0.3s ease-in-out;-moz-transition: background 0.3s ease-in-out;transition: background-color 0.3s ease-in-out;}
-			#contact button[type="submit"]:active{box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}*/
-			#contact input:focus,#contact textarea:focus{outline: 0;border: 1px solid #999;}
-			#contact .leftname{display: block;float: left;width: 20%;height: 1.875rem;line-height: 1.875rem;text-align: center;border: 1px solid #dedede;border-right: none;border-bottom-left-radius: 0.3125rem;border-top-left-radius: 0.3125rem;background-color: #dedede;box-sizing: border-box;}
-			#contact .rightinput{display: block;/*float: right;*/width: 80%;height: 1.875rem;line-height: 1.875rem;box-sizing: border-box;}
-			#contact .iblock{margin-bottom: 0.1875rem;}
-			.face{background: black;opacity: 0.6;z-index: 888;margin: 0 auto;width: 100%;height: 100%;position: fixed;top: 0;left: 0;padding-top: 20%;display: none;}
-			.info_form{padding-bottom: 2rem;z-index: 999;margin: 0 auto;width: 100%;height: 100%;top: 0;left: 0;}
-			.info_form a{color: white;}
-			.go{width: calc(100% - 2rem);min-width: 20rem;max-width: 33rem;background: yellow;position: fixed;top: 0;background: white;height: 3rem;line-height: 3rem;border-bottom: 1px solid #D6D5D6;box-sizing: border-box;display: none;}
-			.go1,.go2,.go3{font-weight: bold;width: 23%;height: 2rem;line-height: 2rem;text-align: center;margin: 0.5rem 5%;font-size: 0.875rem;color: black;text-shadow: 1px 1px 1px #fff;border: 1px solid #dce1e6;box-sizing: border-box;box-shadow: 0 1px 2px #fff inset, 0 -1px 0 #a8abae inset;background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);letter-spacing: 2px;/* text-indent: 8px;*/}
-			.clear{clear: both}
-			.col_red{color: #D27912;}
-			
-			/*补充layer的样式*/
-			.layui-m-layer1 .layui-m-layerchild{border: none;border-radius: 0;border-radius: 10px;min-width: 20rem;max-width: 35rem;}
-
-			/*兑换流程*/
-			.mov_exchange{margin-top: 2rem;}
-			.mov_exchange span{color: #6C6B6B;display: inline-block;margin: 0 0 1rem 0;line-height: 1.5rem;font-size: 0.875rem;}
-			
-			/*下面的电影影院列表*/
-			.mov_list{margin: 0 0 5rem 0;}
-			.mov_list span{color: #6C6B6B;font-size: 0.875rem;line-height: 1.5rem;}
-			.movie_tc{margin: 1rem 0;}
-			.movie_tc table{border-collapse: collapse;border-spacing: 0px;font-size: 0.8rem !important;width: 100%;}
-			.movie_tc .table1{border-left: 2px solid #F1F1F1;border-top: 2px solid #F1F1F1;}
-			.movie_tc .table1 th{border-right:1px solid #7FAF3F;border-bottom:1px solid #7FAF3F;}
-			.movie_tc .table2_con{overflow-y:scroll ;height: 20rem;border-left: 2px solid #F1F1F1;border-bottom: 2px solid #F1F1F1;}
-			.movie_tc .table2_con .table2 tr{border-bottom:1px solid #7FAF3F;}
-			.movie_tc .table2_con .table2 td{border-right:1px solid #7FAF3F;}
-			.movie_tc .table1 .bg_line{background: #DEDEDE;height: 2rem;line-height: 2rem;}	
-			.movie_tc .table1 .one{height: 2rem;line-height: 2rem;background: #7FAF3F;font-size: 1.2rem;color: white}
-			
-			.movie_tc .table2_con .table2 tr:last-child{border-bottom: 0;}
-			.movie_tc table td{height: 1rem;line-height: 1rem;padding: 0.5rem;color:#6C6B6B;}
-			.movie_tc table td:first-child{font-weight: bold;font-size: 0.9rem;color:#D87912;}
-			
-			.movie_tc .table2_con .table2 .star{text-align: center;font-size: 0.4rem;font-family: 宋体;}
-			.movie_tc .table2_con .table2 .two{font-weight: normal !important;font-size: 0.8rem !important;}
-				
-		</style>
+		<link href="css/index.css" rel="stylesheet" />
 	</head>
 
 	<body id="body">
 		<div class="banner_bg"> </div>
 		<div id="content">
-			<div class="go">
-				<a class="go1" href="#panel1" style="float: left;">产品规格</a>
-				<a class="go2" href="#panel2" style="float: left;">兑换流程</a>
-				<a class="go3" href="#panel3" style="float: right;">使用规则</a>
-			</div>
-
 			<!--产品标题-->
 			<div class="title_ti2">
 				<span>博影电影通票（电子券）</span>
 			</div>
-			<!--品鉴记录与规格-->
-			<div id="panel1" class="panel"></div>
-			<div class="record_zq">
-				<div class="record_zq_top_bg"> <span></span> </div>
-				<div class="record_zq_con"> <span class="i_strong">【品鉴记录】</span><br />
-					<span>
-						博影电影通票，一券在手，全国通用，让您爱上电影，爱上生活。
+
+			<!--品鉴记录-->
+			<div class="record_pj">
+				<span class="i_strong">【品鉴记录】</span><br />
+				<span>博影电影通票，一券在手，全国通用，让您爱上电影，爱上生活。
 						您也可以为远在他乡的家人朋友订票，让他们在周末看上一场精彩的电影。
 						支持手机端选座功能，也支持微信查询等功能，足不出户动动手指即可。
-						另为您配备专属售后服务团队，为您解决线上线下的问题咨询
-					</span><br />
-					<span class="i_strong">【规 &nbsp;格】</span><br />
-					<span><h5>博影电影通票（电子券）4张  </h5> 
+						另为您配备专属售后服务团队，为您解决线上线下的问题咨询</span>
+			</div>
+
+			<!--放数据库中-begin-->
+			<div class="content_data">
+
+				<!--规格-->
+				<div class="record_zq">
+					<div class="record_zq_top_bg"> <span></span> </div>
+					<div class="record_zq_con">
+						<span class="i_strong">【规 &nbsp;格】</span><br />
+						<span><h5>博影电影通票（电子券）4张  </h5> 
 					<font color="red">有效期至2018年12月31日</font><br />
 					15位电子券号，通过短信发送至指定手机号，请注意保管
 					</span>
-
-				</div>
-				<div class="record_zq_bottom_bg"> <span></span> </div>
-			</div>
-			<!--图片罗列-->
-			<div class="img_bg"> <img src="__PUBLIC__/img/3/love_movie.png" width="100%" height="100%"> </div>
-
-			<!--兑换流程-->
-			<div id="panel2" class="panel"></div>
-			<div class="mov_exchange">
-				<span class="i_strong">【兑换流程】</span><br />
-				<span class="i_strong">一、通过微信兑换：</span><br />
-				<div class="exchange">
-					<span>1.关注博影微信公众号“boyingsj”</span><br />
-					<div class="img_bg"> <img src="__PUBLIC__/img/3/3-1.jpg" width="100%" height="100%"> </div>
-				</div>
-				<div class="exchange">
-					<span>2.进入博影公众号，点击“博影电影—在线购票”，在线选择影片及电影院</span><br />
-					<div class="img_bg"> <img src="__PUBLIC__/img/3/3-2.jpg" width="100%" height="100%"> </div>
-				</div>
-				<div class="exchange">
-					<span>3.确定订单页面，选择博影电子券，输入券号及验证码支付即可。</span><br />
-					<div class="img_bg"> <img src="__PUBLIC__/img/3/3-3.jpg" width="100%" height="100%"> </div>
-					<span>4.购票完成后，取票验证码将发送至指定手机号</span><br />
+					</div>
+					<div class="record_zq_bottom_bg"> <span></span> </div>
 				</div>
 
-				<span class="i_strong">二、通过官网兑换：</span><br />
-				<div class="exchange">
-					<span>1.进入博影官网：http://www.boyingsj.com/，在线选择影片及电影院</span><br />
-					<div class="img_bg"> <img src="__PUBLIC__/img/3/3-4.png" width="100%" height="100%"> </div>
-				</div>
-				<div class="exchange">
-					<span>2.输入手机号码，购票完成后取票验证码将发送到此手机号。
+				<!--图片罗列-->
+				<div class="img_bg"> <img src="__PUBLIC__/img/3/a_love_movie.png" width="100%" height="100%"> </div>
+
+				<!--兑换流程-->
+				<div id="panel2" class="panel"></div>
+				<div class="mov_exchange">
+					<span class="i_strong">【兑换流程】</span><br />
+					<span class="i_strong">一、通过微信兑换：</span><br />
+					<div class="exchange">
+						<span>1.关注博影微信公众号“boyingsj”</span><br />
+						<div class="img_bg"> <img src="__PUBLIC__/img/3/a_3-1.jpg" width="100%" height="100%"> </div>
+					</div>
+					<div class="exchange">
+						<span>2.进入博影公众号，点击“博影电影—在线购票”，在线选择影片及电影院</span><br />
+						<div class="img_bg"> <img src="__PUBLIC__/img/3/a_3-2.jpg" width="100%" height="100%"> </div>
+					</div>
+					<div class="exchange">
+						<span>3.确定订单页面，选择博影电子券，输入券号及验证码支付即可。</span><br />
+						<div class="img_bg"> <img src="__PUBLIC__/img/3/a_3-3.jpg" width="100%" height="100%"> </div>
+						<span>4.购票完成后，取票验证码将发送至指定手机号</span><br />
+					</div>
+
+					<span class="i_strong">二、通过官网兑换：</span><br />
+					<div class="exchange">
+						<span>1.进入博影官网：http://www.boyingsj.com/，在线选择影片及电影院</span><br />
+						<div class="img_bg"> <img src="__PUBLIC__/img/3/a_3-4.png" width="100%" height="100%"> </div>
+					</div>
+					<div class="exchange">
+						<span>2.输入手机号码，购票完成后取票验证码将发送到此手机号。
 					选择“博影电子券”输入电子券号和验证码支付
 					</span><br />
-					<div class="img_bg"> <img src="__PUBLIC__/img/3/3-5.png" width="100%" height="100%"> </div>
-					<span>3.购票完成后，取票验证码将发送至指定手机号。</span>
+						<div class="img_bg"> <img src="__PUBLIC__/img/3/a_3-5.png" width="100%" height="100%"> </div>
+						<span>3.购票完成后，取票验证码将发送至指定手机号。</span>
+					</div>
 				</div>
-			</div>
 
-			<!--品牌介绍-->
-			<div id="panel3" class="panel"></div>
-			<div class="intro_zq">
-				<span class="i_strong">使用规则：</span><br/>
-				<span>
+				<!--品牌介绍-->
+				<div class="intro_zq" style="margin-bottom: 2rem;">
+					<span class="i_strong">使用规则：</span><br/>
+					<span>
 					1） 本电影兑换券（以下简称“本券”）仅限于在博影网上购买电影票时使用，每券可兑换2D/3D电影票1张，本产品含4张电影兑换券。<br />
 					2） 本券不支持兑换4D/IMAX场次、2月14日情人节、12月24日平安夜、12月25日圣诞节、12月31日迎新夜、1月1日元旦等，及其他特殊的场次；<br />
 					3） 本券为一次性消费券，不记名、不挂失、不兑现、不找零，一经发出概不退换；<br />
@@ -185,161 +90,340 @@
 					7）如本券无法使用请联系博影客服热线：400-108-5665（周一到周日，早9点至晚21点）。<br />
 					8）本券最终解释权归博影所有。<br />
 				</span>
-			</div>
-			<!--影院列表-->
-			<div class="mov_list">
-				<span class="i_strong">【影院列表】</span><br/>
-				<!--博影E类电子券资源---begin-->
-				<div class="movie_tc">
-					<table class="table1" cellpadding="5" cellspacing="0">
-						<tr>
-							<th colspan="4" class="one" style="width: 100%;">博影E类电子券资源<span style="color: red; font-weight: normal;font-size: 0.75rem;">(部分)</span></th>
-						</tr>
-						<tr class="bg_line">
-							<th style="width: 20%;">城市</th>
-							<th style="width: 20%;">行政区</th>
-							<th style="width: 25%;">影院名称</th>
-							<th style="width: 35%;">地址</th>
-						</tr>
-					</table>
-
-					<div class="table2_con">
-						<table class="table2">
-							<colgroup width="20%"></colgroup>
-							<colgroup width="20%"></colgroup>
-							<colgroup width="25%"></colgroup>
-							<colgroup width="35%"></colgroup>
+				</div>
+				<!--影院列表-->
+				<div class="mov_list">
+					<span class="i_strong">【影院列表】</span><br/>
+					<!--博影E类电子券资源---begin-->
+					<div class="movie_tc">
+						<table class="table1" cellpadding="5" cellspacing="0">
 							<tr>
-								<td>阿拉善盟</td>
-								<td>额济纳旗</td>
-								<td>阿拉善宏普摩天影都</td>
-								<td>阿拉善盟额济纳旗达来呼布镇苏泊淖尔北路与胡杨街交叉路口西北角金洋酒店二楼</td>
+								<th colspan="4" class="one" style="width: 100%;">博影E类电子券资源<span style="color: red; font-weight: normal;font-size: 0.75rem;">(部分)</span></th>
 							</tr>
-							<tr>		
-								<td>安康	</td>
-								<td>镇坪县</td>
-								<td>镇平县汇丰国际影城</td>
-								<td>安康市镇坪县城关上新街文化大厦一楼</td>
-							</tr>
-							<tr>		
-								<td>安康	</td>
-								<td>镇坪县</td>
-								<td>镇平县汇丰国际影城</td>
-								<td>安康市镇坪县城关上新街文化大厦一楼</td>
-							</tr>
-							<tr>		
-								<td>安康	</td>
-								<td>镇坪县</td>
-								<td>镇平县汇丰国际影城</td>
-								<td>安康市镇坪县城关上新街文化大厦一楼</td>
-							</tr>
-							<tr>		
-								<td>安康	</td>
-								<td>镇坪县</td>
-								<td>镇平县汇丰国际影城</td>
-								<td>安康市镇坪县城关上新街文化大厦一楼</td>
-							</tr>
-							<tr>		
-								<td>安康	</td>
-								<td>镇坪县</td>
-								<td>镇平县汇丰国际影城</td>
-								<td>安康市镇坪县城关上新街文化大厦一楼</td>
+							<tr class="bg_line">
+								<th style="width: 20%;">城市</th>
+								<th style="width: 20%;">区域</th>
+								<th style="width: 25%;">影院名称</th>
+								<th style="width: 35%;">地址</th>
 							</tr>
 						</table>
-					</div>
 
-				</div>
-				<!--博影E类电子券资源---end-->
-				<span><font style="color: red;">点击链接下载：Excel：博影E类电子券资源<br>
+						<div class="table2_con">
+							<table class="table2">
+								<colgroup width="20%"></colgroup>
+								<colgroup width="20%"></colgroup>
+								<colgroup width="25%"></colgroup>
+								<colgroup width="35%"></colgroup>
+								<tr>
+									<td rowspan="30" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										上海市
+									</td>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										宝山区
+									</td>
+									<td>
+										华士达影城宝山店
+									</td>
+									<td>
+										上海市宝山区陆翔路111弄10号正大乐城3楼
+									</td>
+								</tr>
+								<tr>
+									<td>
+										DFC影城宝山店
+									</td>
+									<td>
+										上海市宝山区共和新路5288号
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										奉贤区
+									</td>
+									<td>
+										南桥电影院&nbsp;
+									</td>
+									<td>
+										上海市奉贤区南桥路333号
+									</td>
+								</tr>
+								<tr>
+									<td>
+										上影国际影城-南桥新都汇店
+									</td>
+									<td>
+										上海市奉贤区环城东路681号4楼
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										虹口区
+									</td>
+									<td>
+										曲阳影都
+									</td>
+									<td>
+										上海市虹口区曲阳路570号
+									</td>
+								</tr>
+								<tr>
+									<td>
+										金逸国际影城（龙之梦店）
+									</td>
+									<td>
+										上海虹口区西江湾路388号凯德龙之梦B座6-7楼
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										黄浦区
+									</td>
+									<td>
+										国泰电影院
+									</td>
+									<td>
+										上海黄浦区淮海中路870号（茂名南路口）
+									</td>
+								</tr>
+								<tr>
+									<td>
+										万裕淮海影城
+									</td>
+									<td>
+										上海市黄浦区淮海中路99号大上海时代广场六楼
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										嘉定区
+									</td>
+									<td>
+										CGV星聚汇影城（上海安亭店）
+									</td>
+									<td>
+										上海市嘉定区安亭镇墨玉南路1055号嘉亭荟城市生活广场3楼
+									</td>
+								</tr>
+								<tr>
+									<td>
+										保利国际影城上海祥腾店
+									</td>
+									<td>
+										上海嘉定区真南路4368弄1、2号中冶祥腾城市广场4层
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										金山区
+									</td>
+									<td>
+										上海金山万达广场店
+									</td>
+									<td>
+										金山区龙皓路1088号万达广场四楼(蒙山北路)
+									</td>
+								</tr>
+								<tr>
+									<td>
+										星美国际影城上海金山店
+									</td>
+									<td>
+										上海市金山区板桥西路189号金山百联购物中心3楼
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										闵行区
+									</td>
+									<td>
+										莘庄海上国际影城 /（海上国际影城莘庄店）
+									</td>
+									<td>
+										上海市闵行区沪闵路6088号莘庄凯德龙之梦购物中心4楼
+									</td>
+								</tr>
+								<tr>
+									<td>
+										莘庄CGV
+									</td>
+									<td>
+										上海市闵行区都市路5001号仲盛世界商城四楼
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										浦东新区
+									</td>
+									<td>
+										海上国际影城-喜玛拉雅
+									</td>
+									<td>
+										上海市浦东新区芳甸路1188弄喜玛拉雅中心7－8层
+									</td>
+								</tr>
+								<tr>
+									<td>
+										中影DFC影城龙阳路店
+									</td>
+									<td>
+										浦东新区龙阳路2000号龙阳广场5楼
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										普陀区
+									</td>
+									<td>
+										金逸国际影城(中环店)
+									</td>
+									<td>
+										上海市普陀区金沙江路1628号绿洲中环太平洋广场5号楼（农工商118广场对面）
+									</td>
+								</tr>
+								<tr>
+									<td>
+										上海博纳银兴国际影城(我格广场店)
+									</td>
+									<td>
+										上海市普陀区武宁路101号我格广场4楼（近普雄路）
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										青浦区
+									</td>
+									<td>
+										上海永乐国际影城（青浦2店）
+									</td>
+									<td>
+										上海市青浦区青湖东路900号3楼（麦德龙3楼）
+									</td>
+								</tr>
+								<tr>
+									<td>
+										星美国际影城上海青浦店
+									</td>
+									<td>
+										上海市青浦区沪青平公路1819号永业购物中心3楼星美国际影城
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										松江区
+									</td>
+									<td>
+										星美国际影城上海松江店&nbsp;
+									</td>
+									<td>
+										上海市松江区环城路555号玩库商城3楼
+									</td>
+								</tr>
+								<tr>
+									<td>
+										上海JIA(嘉莱影城九亭店)
+									</td>
+									<td>
+										上海市松江区地铁九号线九亭站地铁二号口内（地下一层）
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										徐汇区
+									</td>
+									<td>
+										上海朵云轩杜比全景声影城
+									</td>
+									<td>
+										上海市徐汇区天钥桥路1188号5楼
+									</td>
+								</tr>
+								<tr>
+									<td>
+										上海优幕星天地影城
+									</td>
+									<td>
+										上海市徐汇区上中西路280号凌云壹街坊4楼（凌云1街坊）
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										杨浦区
+									</td>
+									<td>
+										金逸国际影城（海上海店）
+									</td>
+									<td>
+										上海杨浦区飞虹路568弄海上海，弘基休闲广场A区48号
+									</td>
+								</tr>
+								<tr>
+									<td>
+										上海大光明丽星汇影城(杨浦店)
+									</td>
+									<td>
+										上海市杨浦区民星路378号太平洋生活广场2F
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										闸北区
+									</td>
+									<td>
+										上海新华永乐国际影城
+									</td>
+									<td>
+										上海市闸北区延长中路801号B座2楼
+									</td>
+								</tr>
+								<tr>
+									<td>
+										上海17.5影城闸北店&nbsp;
+									</td>
+									<td>
+										上海市闸北区共和新路3088号祥腾财富广场2号楼205-208
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="font-weight: bold;font-size: 0.9rem;color:#D87912;">
+										长宁区
+									</td>
+									<td>
+										万裕天山影城
+									</td>
+									<td>
+										上海市长宁区天山路900号6楼
+									</td>
+								</tr>
+								<tr>
+									<td>
+										上海17.5影城北虹店
+									</td>
+									<td>
+										上海市长宁区北虹路1068号4楼
+									</td>
+								</tr>
+							</table>
+						</div>
+
+					</div>
+					<!--博影E类电子券资源---end-->
+					<span><font style="color: red;">点击链接下载：Excel：博影E类电子券资源<br>
 				<a href="http://www.baidu.com" style="text-decoration: underline;"> http://www.baidu.com</a>
 				</font></span>
+				</div>
 			</div>
+			<!--放数据库中-end-->
 
 		</div>
 
 		<!--按钮处-->
 		<div class="footer">
-			<span><a href="javascript:modalBottom();">点击兑换</a></span>
+			<span><a href="javascript:modalBottom();">兑换</a></span>
+			<span><a href="javascript:history.back();">返回</a></span>
 		</div>
-		<div class="face" id="face"></div>
 		<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
 		<script type="text/javascript" src="http://cdn.huangjuntu.vip/js/layer3.0.3/mobile/layer.js"></script>
-		<script>
-			//			下滑动一定距离时出现锚点
-			$(function() {
-				//产品规格高度
-				var record_zq = $(".record_zq").offset().top;
-				console.log("产品规格1:" + record_zq);
-
-				//流程 高度
-				var mov_exchange = $(".mov_exchange").offset().top;
-				console.log("产品详情2:" + mov_exchange);
-
-				//使用规则 高度
-				var intro_zq = $(".intro_zq").offset().top;
-				console.log("品牌介绍3:" + intro_zq);
-
-				//测试高度				
-				$(window).scroll(function() {
-					console.log("产品规格" + record_zq);
-					console.log("流程 高度" + mov_exchange);
-					console.log("使用规则" + intro_zq);
-
-					var this_scrollTop = $(this).scrollTop();
-					console.log("滚动条范围" + this_scrollTop); //336
-
-					//产品规格1（record_zq）:384
-					//流程 高度2（mov_exchange）:953.65625
-					//使用规则 高度3（intro_zq）:3941.65625
-
-					if(this_scrollTop >= 250.09375) {
-
-						if(this_scrollTop > record_zq * 0.7 && this_scrollTop < mov_exchange * 0.9) {
-							$(".go1").addClass("col_red");
-							$(".go2").removeClass("col_red");
-							$(".go3").removeClass("col_red");
-
-						}
-						if(mov_exchange * 0.9 <= this_scrollTop && this_scrollTop <= intro_zq * 0.95) {
-							$(".go1").removeClass("col_red");
-							$(".go3").removeClass("col_red");
-							$(".go2").addClass("col_red");
-
-						}
-						if(intro_zq * 0.95 < this_scrollTop) {
-							$(".go2").removeClass("col_red");
-							$(".go1").removeClass("col_red");
-							$(".go3").addClass("col_red");
-						}
-						$(".go").show();
-					} else {
-						$(".go").hide();
-					}
-				});
-			});
-
-			//			兑换点击按钮
-			function modalBottom() {
-				layer.open({
-					type: 1,
-					title: "请填入兑换信息",
-					closeBtn: 0,
-					shadeClose: true, //点击遮罩关闭
-					skin: 'yourclass',
-					content: '<div class="info_form" id="info_form">\
-					<form id="contact" action="" method="post">\
-						<div class="iblock"><span class="leftname">姓名</span><input placeholder="请输入收货人姓名" type="text" required autofocus class="rightinput"></div><div class="clear"></div>\
-						<div class="iblock"><span class="leftname">电话</span><input placeholder="请输入收货人电话" type="tel" required class="rightinput"></div><div class="clear"></div>\
-						<div class="iblock"><span class="leftname">邮件</span><input placeholder="请输入收货人邮箱" type="email" required class="rightinput"></div><div class="clear"></div>\
-						<div class="iblock"><span class="leftname">地址</span><input placeholder="请输入收货人地址" type="text" required class="rightinput"></div><div class="clear"></div>\
-						<textarea placeholder="留言~" required></textarea>\
-						<button name="doExchange" type="button" id="doExchange"><a href="last.html">我要兑换</a></button> \
-					</form>\
-				</div>'
-				});
-
-			}
-		</script>
+		<script src="index.js"></script>
 	</body>
 
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <body>
+        <h2>
+            礼品详情
+        </h2>
+        <div>
+            ID: {$product.product_id}
+            <br/>
+            类别: {$product.category}
+            <br/>
+            摘要: {$product.abstract}
+            <br/>
+            标题: {$product.title}
+            <br/>
+            内容: {$product.content}
+            <br/>
+        </div>
+        <h2>
+            兑换信息
+        </h2>
+        您的姓名: {$order.realname}
+        <br/>
+        手机号码: {$order.mobile}
+        <br/>
+        电子邮箱: {$order.email}
+        <br/>
+        收件地址: {$order.address}
+        <br/>
+        备　　注: {$order.remark}
+        <br/>
+        快递公司: {$order.express}
+        <br/>
+        快递单号: {$order.express_number}
+    </body>
+</html>
