@@ -56,7 +56,7 @@ body,html{height: auto;margin: 0 auto;min-width: 20rem;max-width: 35rem;}
 
 /*按钮*/
 .footer{width: 100%;height: 4rem;line-height: 4rem;background: white;position: fixed;bottom: 0;min-width: 20rem;max-width: 35rem;}
-.footer span{color: #fff;font-weight: normal;display: block;float:left;margin: 0.5rem 5%;box-sizing:border-box;width:40%;text-align: center;height: 3rem;line-height: 3rem;border-radius: 1rem;border: 1px solid #d2a000;box-shadow: 0 1px 2px #fedd71 inset, 0 -1px 0 #a38b39 inset, 0 -2px 3px #fedd71 inset;background: -webkit-linear-gradient(top, #fece34, #d8a605);}
+.footer span{color: #fff;font-weight: normal;display: block;float:left;margin: 0.5rem 5%;box-sizing:border-box;width:40%;text-align: center;height: 3rem;line-height: 3rem;border-radius: 1rem;border: 1px solid #d2a000;box-shadow: 0 1px 2px #fedd71 inset, 0 -1px 0 #a38b39 inset, 0 -2px 3px #fedd71 inset;background:#d8a605;background: -webkit-linear-gradient(top, #fece34, #d8a605);}
 .footer span:active{border: 0px solid #ef4300;}
 .footer span a{color: white;display: block;font-weight: bold;}
 
